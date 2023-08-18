@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://df7ovuqmk2fiq"]
+
+[ext_resource type="PackedScene" uid="uid://cfayq4thiirsh" path="res://biter.tscn" id="1_7smvw"]
+[ext_resource type="PackedScene" uid="uid://cq0dstrdi4d45" path="res://crawler.tscn" id="2_e7gkf"]
+
+[node name="Main" type="Node"]
+
+[node name="Biter" parent="." instance=ExtResource("1_7smvw")]
+
+[node name="Crawler" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(157, 142)
+
+[node name="Crawler2" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(959, 524)
+
+[node name="Crawler3" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(967, 137)
+
+[node name="Crawler4" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(155, 518)
+
+[node name="Crawler5" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(167, 330)
+
+[node name="Crawler6" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(961, 341)
+
+[node name="Crawler7" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(566, 138)
+
+[node name="Crawler8" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(551, 514)
