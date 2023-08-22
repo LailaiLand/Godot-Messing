@@ -1,16 +1,28 @@
-[gd_scene load_steps=14 format=3 uid="uid://cfayq4thiirsh"]
+[gd_scene load_steps=26 format=3 uid="uid://cfayq4thiirsh"]
 
 [ext_resource type="Script" path="res://Biter.cs" id="1_ug3lv"]
 [ext_resource type="Texture2D" uid="uid://dl4h5744ie750" path="res://Art/PNG/Biter/BiterStand1.png" id="1_vg8hr"]
+[ext_resource type="Texture2D" uid="uid://7wbjuw72u7us" path="res://Art/PNG/Biter/BiterEat1.png" id="2_ijc06"]
 [ext_resource type="Texture2D" uid="uid://1xnpdy5acesp" path="res://Art/PNG/Biter/BiterStand2.png" id="2_uh67s"]
+[ext_resource type="Texture2D" uid="uid://gj7nyi2m0od4" path="res://Art/PNG/Biter/BiterEat2.png" id="3_edsdc"]
 [ext_resource type="Texture2D" uid="uid://bfa416dwslbo5" path="res://Art/PNG/Biter/BiterStand3.png" id="3_spwgx"]
 [ext_resource type="Texture2D" uid="uid://brc3rv1bppomc" path="res://Art/PNG/Biter/BiterStand4.png" id="4_08vwq"]
+[ext_resource type="Texture2D" uid="uid://ceu45frbgv5c6" path="res://Art/PNG/Biter/BiterEat3.png" id="4_y310e"]
 [ext_resource type="Texture2D" uid="uid://d0fg7vs4dgxuj" path="res://Art/PNG/Biter/BiterStand5.png" id="5_4rlja"]
+[ext_resource type="Texture2D" uid="uid://ciq24t0kpdpx6" path="res://Art/PNG/Biter/BiterEat4.png" id="5_kocto"]
 [ext_resource type="Texture2D" uid="uid://dp4dctmppiisc" path="res://Art/PNG/Biter/BiterStand6.png" id="6_aj2c5"]
+[ext_resource type="Texture2D" uid="uid://ciot0sa7lkkuv" path="res://Art/PNG/Biter/BiterEat5.png" id="6_x307c"]
 [ext_resource type="Texture2D" uid="uid://bkbx0ut6xni4" path="res://Art/PNG/Biter/BiterStand7.png" id="7_6mn8e"]
+[ext_resource type="Texture2D" uid="uid://c1muw45demttt" path="res://Art/PNG/Biter/BiterEat6.png" id="7_ixvhy"]
+[ext_resource type="Texture2D" uid="uid://c2m71ucqa8drr" path="res://Art/PNG/Biter/BiterEat7.png" id="8_4hbkq"]
 [ext_resource type="Texture2D" uid="uid://cao5sbg47ksl1" path="res://Art/PNG/Biter/BiterStand8.png" id="8_o6jml"]
+[ext_resource type="Texture2D" uid="uid://ctywie5c7nnys" path="res://Art/PNG/Biter/BiterEat8.png" id="9_rkprx"]
 [ext_resource type="Texture2D" uid="uid://ducigj2cy1y3l" path="res://Art/PNG/Biter/BiterStand9.png" id="9_up1c2"]
+[ext_resource type="Texture2D" uid="uid://rvhl6ctpi7v2" path="res://Art/PNG/Biter/BiterEat9.png" id="10_01ul7"]
 [ext_resource type="Texture2D" uid="uid://cq62rvglwvhfo" path="res://Art/PNG/Biter/BiterStand10.png" id="10_hmqh1"]
+[ext_resource type="Texture2D" uid="uid://cdiqcc2jkmce3" path="res://Art/PNG/Biter/BiterEat10.png" id="11_ksje6"]
+[ext_resource type="Texture2D" uid="uid://bbfhlvgfd4v8r" path="res://Art/PNG/Biter/BiterEat11.png" id="12_qlviu"]
+[ext_resource type="Texture2D" uid="uid://c52g0byaygroy" path="res://Art/PNG/Biter/BiterEat12.png" id="13_d5roq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_32wm2"]
 radius = 22.0
@@ -18,6 +30,47 @@ height = 78.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_omc80"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ijc06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_edsdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y310e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kocto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x307c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ixvhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4hbkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rkprx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_01ul7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ksje6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qlviu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d5roq")
+}],
+"loop": false,
+"name": &"bite",
+"speed": 18.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_vg8hr")
