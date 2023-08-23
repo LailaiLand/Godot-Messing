@@ -7,12 +7,20 @@ public partial class Biter : CharacterBody2D
 	private AnimatedSprite2D _animation;
 	[Export] public int Speed { get; set; } = 5;
 
+	[Signal]
+	public delegate void EatEventHandler();
+
 	public override void _Ready()
 	{
 		_animation = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 	}
 	public override void _Process(double delta)
 	{
+		if (_animation.Animation == "bite" && _animation.Frame == 11)
+		{
+			EmitSignal("Eat");
+			_animation.Animation = "stand";
+		}
 		if (_animation.Animation != "bite") _animation.Animation = "stand";
 		_animation.Play();
 		_animation.FlipH = Velocity.X < 0;

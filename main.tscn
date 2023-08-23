@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://df7ovuqmk2fiq"]
+[gd_scene load_steps=5 format=3 uid="uid://df7ovuqmk2fiq"]
 
 [ext_resource type="PackedScene" uid="uid://cfayq4thiirsh" path="res://biter.tscn" id="1_7smvw"]
+[ext_resource type="Script" path="res://Main.cs" id="1_fppmu"]
+[ext_resource type="PackedScene" uid="uid://cqid4o8cgcpdv" path="res://poop.tscn" id="2_5ypui"]
 [ext_resource type="PackedScene" uid="uid://cq0dstrdi4d45" path="res://crawler.tscn" id="2_e7gkf"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_fppmu")
+SpawnPoop = ExtResource("2_5ypui")
 
 [node name="Biter" parent="." instance=ExtResource("1_7smvw")]
+position = Vector2(563, 328)
 
 [node name="Crawler" parent="." instance=ExtResource("2_e7gkf")]
 position = Vector2(157, 142)
@@ -30,3 +35,5 @@ position = Vector2(566, 138)
 
 [node name="Crawler8" parent="." instance=ExtResource("2_e7gkf")]
 position = Vector2(551, 514)
+
+[connection signal="Eat" from="Biter" to="." method="OnBiterEat"]

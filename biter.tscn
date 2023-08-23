@@ -111,11 +111,9 @@ animations = [{
 script = ExtResource("1_ug3lv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(555, 342)
 shape = SubResource("CapsuleShape2D_32wm2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(556, 340)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_omc80")
 animation = &"stand"
