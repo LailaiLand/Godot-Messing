@@ -1,97 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://coa7oobpvp60u"]
+[gd_scene load_steps=2 format=3 uid="uid://coa7oobpvp60u"]
 
-[ext_resource type="Texture2D" uid="uid://fqtd2jmo60l8" path="res://Art/PNG/Map/Tilesheet.png" id="1_83upb"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_lktlb"]
-vertices = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)])
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6b35f"]
-resource_name = "WallFloor"
-texture = ExtResource("1_83upb")
-texture_region_size = Vector2i(70, 70)
-0:0/0 = 0
-0:0/0/terrain_set = 0
-0:0/0/terrain = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_lktlb")
-1:0/0 = 0
-1:0/0/terrain_set = 0
-1:0/0/terrain = 1
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
-2:0/0 = 0
-2:0/0/terrain_set = 0
-2:0/0/terrain = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, 14.5, 35, 14.4957, 35, 35, -35, 35)
-2:0/0/terrains_peering_bit/bottom_side = 0
-3:0/0 = 0
-3:0/0/terrain_set = 0
-3:0/0/terrain = 0
-3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, -14.5, -35, -14, 35, -35, 35)
-3:0/0/terrains_peering_bit/left_side = 0
-4:0/0 = 0
-4:0/0/terrain_set = 0
-4:0/0/terrain = 0
-4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(35, -14, -35, -14, -35, -35, 35, -35)
-4:0/0/terrains_peering_bit/top_side = 0
-0:1/0 = 0
-0:1/0/terrain_set = 0
-0:1/0/terrain = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.143, -35, 35, -35, 35, 35, -35, 35, -35, 14.2544, 14.143, 14.2544)
-0:1/0/terrains_peering_bit/bottom_right_corner = 0
-1:1/0 = 0
-1:1/0/terrain_set = 0
-1:1/0/terrain = 0
-1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, 14.2305, 35, 14.2305, -14.1421, -35, -14.1421)
-1:1/0/terrains_peering_bit/top_right_corner = 0
-2:1/0 = 0
-2:1/0/terrain_set = 0
-2:1/0/terrain = 0
-2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:1/0/physics_layer_0/angular_velocity = 0.0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, -14.5841, -35, -14.5, 14, 35, 14.3189, 35, 35, -35, 35)
-2:1/0/terrains_peering_bit/bottom_left_corner = 0
-3:1/0 = 0
-3:1/0/terrain_set = 0
-3:1/0/terrain = 0
-3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:1/0/physics_layer_0/angular_velocity = 0.0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, -14.4957, -14.0537, -14.1421, -14.5841, 35, -35, 35)
-3:1/0/terrains_peering_bit/top_left_corner = 0
-4:1/0 = 0
-4:1/0/terrain_set = 0
-4:1/0/terrain = 0
-4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:1/0/physics_layer_0/angular_velocity = 0.0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(13.75, -35, 35, -35, 35, 35, 14.25, 35)
-4:1/0/terrains_peering_bit/right_side = 0
-
-[sub_resource type="TileSet" id="TileSet_wsaep"]
-tile_size = Vector2i(70, 70)
-physics_layer_0/collision_layer = 1
-terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Floor"
-terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-terrain_set_0/terrain_1/name = "Pillar"
-terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
-navigation_layer_0/layers = 1
-sources/0 = SubResource("TileSetAtlasSource_6b35f")
+[ext_resource type="TileSet" uid="uid://chao40x4ofegf" path="res://Bricks.tres" id="1_x3ppd"]
 
 [node name="Castle" type="TileMap"]
 position = Vector2(13, -4)
-tile_set = SubResource("TileSet_wsaep")
+scale = Vector2(1.00369, 1.15015)
+tile_set = ExtResource("1_x3ppd")
 format = 2
+layer_0/name = "Floorplan"
+layer_1/name = "Pillars"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
