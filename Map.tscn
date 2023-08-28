@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0a78jlcgfxcq"]
+
+[ext_resource type="Texture2D" uid="uid://c7luycffjqb4c" path="res://Art/PNG/Map/Stage.png" id="1_4t3vv"]
+[ext_resource type="Script" path="res://Map.cs" id="1_khxum"]
+[ext_resource type="Script" path="res://Stage.cs" id="3_qxtoc"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_olobi"]
+
+[node name="Map" type="Sprite2D"]
+texture = SubResource("ImageTexture_olobi")
+script = ExtResource("1_khxum")
+
+[node name="Stage" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(-2, 0)
+texture = ExtResource("1_4t3vv")
+script = ExtResource("3_qxtoc")

@@ -111,6 +111,7 @@ animations = [{
 script = ExtResource("1_ug3lv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_as_relative = false
 shape = SubResource("CapsuleShape2D_32wm2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

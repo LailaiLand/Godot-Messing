@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Poop.cs" id="2_4vbbm"]
 
 [node name="Poop" type="Sprite2D"]
+z_index = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_06fve")
 script = ExtResource("2_4vbbm")

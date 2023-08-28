@@ -1,39 +1,87 @@
-[gd_scene load_steps=5 format=3 uid="uid://df7ovuqmk2fiq"]
+[gd_scene load_steps=6 format=3 uid="uid://df7ovuqmk2fiq"]
 
 [ext_resource type="PackedScene" uid="uid://cfayq4thiirsh" path="res://biter.tscn" id="1_7smvw"]
 [ext_resource type="Script" path="res://Main.cs" id="1_fppmu"]
 [ext_resource type="PackedScene" uid="uid://cqid4o8cgcpdv" path="res://poop.tscn" id="2_5ypui"]
 [ext_resource type="PackedScene" uid="uid://cq0dstrdi4d45" path="res://crawler.tscn" id="2_e7gkf"]
+[ext_resource type="PackedScene" uid="uid://d0a78jlcgfxcq" path="res://Map.tscn" id="3_5alcl"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_fppmu")
 SpawnPoop = ExtResource("2_5ypui")
 
+[node name="Map" parent="." instance=ExtResource("3_5alcl")]
+z_index = -2
+position = Vector2(606, 396)
+
 [node name="Biter" parent="." instance=ExtResource("1_7smvw")]
-position = Vector2(563, 328)
+z_as_relative = false
+position = Vector2(537, 286)
+
+[node name="Camera2D" type="Camera2D" parent="Biter"]
+zoom = Vector2(2, 2)
 
 [node name="Crawler" parent="." instance=ExtResource("2_e7gkf")]
-position = Vector2(157, 142)
+position = Vector2(183, 137)
 
 [node name="Crawler2" parent="." instance=ExtResource("2_e7gkf")]
-position = Vector2(959, 524)
+position = Vector2(367, 42)
 
 [node name="Crawler3" parent="." instance=ExtResource("2_e7gkf")]
-position = Vector2(967, 137)
+position = Vector2(545, 134)
 
 [node name="Crawler4" parent="." instance=ExtResource("2_e7gkf")]
-position = Vector2(155, 518)
+position = Vector2(367, 289)
 
 [node name="Crawler5" parent="." instance=ExtResource("2_e7gkf")]
-position = Vector2(167, 330)
+position = Vector2(176, 418)
 
 [node name="Crawler6" parent="." instance=ExtResource("2_e7gkf")]
-position = Vector2(961, 341)
+position = Vector2(537, 415)
 
 [node name="Crawler7" parent="." instance=ExtResource("2_e7gkf")]
-position = Vector2(566, 138)
+position = Vector2(360, 543)
 
 [node name="Crawler8" parent="." instance=ExtResource("2_e7gkf")]
-position = Vector2(551, 514)
+position = Vector2(172, 677)
+
+[node name="Crawler9" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(528, 676)
+
+[node name="Crawler10" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(360, 780)
+
+[node name="Crawler11" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(686, 553)
+
+[node name="Crawler12" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(682, 282)
+
+[node name="Crawler13" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(815, 405)
+
+[node name="Crawler14" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(1048, 525)
+
+[node name="Crawler15" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(1145, 616)
+
+[node name="Crawler16" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(1051, 718)
+
+[node name="Crawler17" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(955, 618)
+
+[node name="Crawler18" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(1045, 296)
+
+[node name="Crawler19" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(949, 193)
+
+[node name="Crawler20" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(1047, 104)
+
+[node name="Crawler21" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(1145, 197)
 
 [connection signal="Eat" from="Biter" to="." method="OnBiterEat"]

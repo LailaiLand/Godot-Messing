@@ -52,7 +52,8 @@ shape = SubResource("CapsuleShape2D_yc8gx")
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_dql6h")
 animation = &"walk"
-frame_progress = 0.500981
+frame = 2
+frame_progress = 0.921738
 
 [node name="Area2D" type="Area2D" parent="."]
 
