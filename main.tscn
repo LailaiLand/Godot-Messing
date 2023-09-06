@@ -80,6 +80,54 @@ position = Vector2(828, -2)
 position = Vector2(996, -152)
 
 [node name="Crawler21" parent="." instance=ExtResource("2_e7gkf")]
-position = Vector2(1169, -5)
+position = Vector2(1166, 6)
+
+[node name="Crawler22" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-712, -112)
+
+[node name="Crawler25" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-724, 748)
+
+[node name="Crawler26" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-1290, 802)
+
+[node name="Crawler27" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-1284, 382)
+
+[node name="Crawler28" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-1281, 235)
+
+[node name="Crawler29" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-1278, -176)
+
+[node name="Crawler30" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-1470, 31)
+
+[node name="Crawler31" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-1467, 564)
+
+[node name="Crawler23" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-1116, 21)
+
+[node name="Crawler32" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-1125, 581)
+
+[node name="Crawler24" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-946, 218)
+
+[node name="Crawler34" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-937, 8)
+
+[node name="Crawler35" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-847, 92)
+
+[node name="Crawler36" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-937, 622)
+
+[node name="Crawler37" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-856, 532)
+
+[node name="Crawler33" parent="." instance=ExtResource("2_e7gkf")]
+position = Vector2(-955, 404)
 
 [connection signal="Eat" from="Biter" to="." method="OnBiterEat"]
