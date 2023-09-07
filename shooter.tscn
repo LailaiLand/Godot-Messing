@@ -1,0 +1,567 @@
+[gd_scene load_steps=29 format=3 uid="uid://dqxyx75plsbkt"]
+
+[ext_resource type="Texture2D" uid="uid://6bdmb5ldojrp" path="res://Art/PNG/Shooter/ShooterChest.png" id="1_incko"]
+[ext_resource type="Texture2D" uid="uid://vcbu454iidwx" path="res://Art/PNG/Shooter/ShooterUpArmL.png" id="1_ss0gj"]
+[ext_resource type="Texture2D" uid="uid://ddstphmgovtox" path="res://Art/PNG/Shooter/ShooterLoArmL.png" id="2_pb2s4"]
+[ext_resource type="Texture2D" uid="uid://bqj5sacsb5jhu" path="res://Art/PNG/Shooter/ShooterUpLegR.png" id="2_pssgg"]
+[ext_resource type="Texture2D" uid="uid://cn7smivmbawwa" path="res://Art/PNG/Shooter/ShooterHip.png" id="2_ukxeu"]
+[ext_resource type="Texture2D" uid="uid://jmgrggkwc6xh" path="res://Art/PNG/Shooter/ShooterUpLegL.png" id="2_xc0e8"]
+[ext_resource type="Texture2D" uid="uid://dj7mqn36sdxtr" path="res://Art/PNG/Shooter/ShooterHead.png" id="3_0k17s"]
+[ext_resource type="Texture2D" uid="uid://cks3b42m2pf5i" path="res://Art/PNG/Shooter/ShooterHandL.png" id="3_7mced"]
+[ext_resource type="Texture2D" uid="uid://byjmygr46qhd7" path="res://Art/PNG/Shooter/ShooterLoLegL.png" id="3_jocar"]
+[ext_resource type="Texture2D" uid="uid://clsjl2gwwhll" path="res://Art/PNG/Shooter/ShooterLoLegR.png" id="3_juai2"]
+[ext_resource type="Texture2D" uid="uid://ddleencgl7h18" path="res://Art/PNG/Shooter/ShooterFootL.png" id="4_4sieh"]
+[ext_resource type="Texture2D" uid="uid://djvrad2emvu58" path="res://Art/PNG/Shooter/HairR.png" id="4_k6y81"]
+[ext_resource type="Texture2D" uid="uid://bm321xmbu8jh7" path="res://Art/PNG/Shooter/ShooterFootR.png" id="4_ka4et"]
+[ext_resource type="Texture2D" uid="uid://bg2qm0kburfha" path="res://Art/PNG/Shooter/HairL.png" id="5_2bslw"]
+[ext_resource type="Texture2D" uid="uid://ddko8gommwjly" path="res://Art/PNG/Shooter/ShooterUpArmR.png" id="13_35gec"]
+[ext_resource type="Texture2D" uid="uid://b57v0wjt4ibaf" path="res://Art/PNG/Shooter/ShooterLoArmR.png" id="14_ewxcl"]
+[ext_resource type="Texture2D" uid="uid://hrgfw0edm8vp" path="res://Art/PNG/Shooter/ShooterHandR.png" id="15_7rm1p"]
+
+[sub_resource type="SkeletonModification2DJiggle" id="SkeletonModification2DJiggle_eaf5v"]
+target_nodepath = NodePath("PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D/HairRMarker2D")
+jiggle_data_chain_length = 1
+joint_data/0/bone_index = 5
+joint_data/0/bone2d_node = NodePath("PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D/HairRBone2D")
+joint_data/0/override_defaults = false
+
+[sub_resource type="SkeletonModification2DJiggle" id="SkeletonModification2DJiggle_au26b"]
+target_nodepath = NodePath("PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D/HairLMarker2D")
+jiggle_data_chain_length = 1
+joint_data/0/bone_index = 4
+joint_data/0/bone2d_node = NodePath("PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D/HairLBone2D")
+joint_data/0/override_defaults = false
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_ayr75"]
+target_nodepath = NodePath("PelvisBone2D/HandRMarker2D")
+flip_bend_direction = true
+joint_one_bone_idx = 6
+joint_one_bone2d_node = NodePath("PelvisBone2D/SkirtBone2D/ArmRBone2D")
+joint_two_bone_idx = 7
+joint_two_bone2d_node = NodePath("PelvisBone2D/SkirtBone2D/ArmRBone2D/ForeArmRBone2D")
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_p75s4"]
+target_nodepath = NodePath("PelvisBone2D/TorsoMarker2D")
+tip_nodepath = NodePath("PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D")
+ccdik_data_chain_length = 2
+joint_data/0/bone_index = 1
+joint_data/0/bone2d_node = NodePath("PelvisBone2D/SkirtBone2D")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = false
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 2
+joint_data/1/bone2d_node = NodePath("PelvisBone2D/SkirtBone2D/ChestBone2D")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = false
+joint_data/1/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_3ysyr"]
+target_nodepath = NodePath("PelvisBone2D/HandLMarker2D")
+flip_bend_direction = true
+joint_one_bone_idx = 9
+joint_one_bone2d_node = NodePath("PelvisBone2D/SkirtBone2D/ChestBone2D/ArmLBone2D")
+joint_two_bone_idx = 10
+joint_two_bone2d_node = NodePath("PelvisBone2D/SkirtBone2D/ChestBone2D/ArmLBone2D/ForeArmLBone2D")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_c5byc"]
+target_nodepath = NodePath("PelvisBone2D/FootRMarker2D")
+joint_one_bone_idx = 12
+joint_one_bone2d_node = NodePath("PelvisBone2D/LegRBone2D")
+joint_two_bone_idx = 13
+joint_two_bone2d_node = NodePath("PelvisBone2D/LegRBone2D/ShinRBone2D")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_7qudk"]
+target_nodepath = NodePath("PelvisBone2D/FootLMarker2D")
+joint_one_bone_idx = 15
+joint_one_bone2d_node = NodePath("PelvisBone2D/LegLBone2D")
+joint_two_bone_idx = 16
+joint_two_bone2d_node = NodePath("PelvisBone2D/LegLBone2D/ShinLBone2D")
+
+[sub_resource type="SkeletonModification2DJiggle" id="SkeletonModification2DJiggle_3pp0d"]
+execution_mode = 1
+target_nodepath = NodePath("PelvisBone2D/LegRBone2D/ShinRBone2D/ToeRMarker2D")
+jiggle_data_chain_length = 1
+joint_data/0/bone_index = 14
+joint_data/0/bone2d_node = NodePath("PelvisBone2D/LegRBone2D/ShinRBone2D/FootRBone2D")
+joint_data/0/override_defaults = false
+
+[sub_resource type="SkeletonModification2DJiggle" id="SkeletonModification2DJiggle_vh2s8"]
+execution_mode = 1
+target_nodepath = NodePath("PelvisBone2D/LegLBone2D/ShinLBone2D/ToeLMarker2D")
+jiggle_data_chain_length = 1
+joint_data/0/bone_index = 17
+joint_data/0/bone2d_node = NodePath("PelvisBone2D/LegLBone2D/ShinLBone2D/FootLBone2D")
+joint_data/0/override_defaults = false
+
+[sub_resource type="SkeletonModification2DJiggle" id="SkeletonModification2DJiggle_2w1l6"]
+target_nodepath = NodePath("PelvisBone2D/SkirtBone2D/ChestBone2D/HeadMarker2D")
+jiggle_data_chain_length = 1
+stiffness = 7.0
+damping = 1.0
+joint_data/0/bone_index = 3
+joint_data/0/bone2d_node = NodePath("PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D")
+joint_data/0/override_defaults = false
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_aasx6"]
+enabled = true
+modification_count = 10
+modifications/0 = SubResource("SkeletonModification2DJiggle_eaf5v")
+modifications/1 = SubResource("SkeletonModification2DJiggle_au26b")
+modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_ayr75")
+modifications/3 = SubResource("SkeletonModification2DCCDIK_p75s4")
+modifications/4 = SubResource("SkeletonModification2DTwoBoneIK_3ysyr")
+modifications/5 = SubResource("SkeletonModification2DTwoBoneIK_c5byc")
+modifications/6 = SubResource("SkeletonModification2DTwoBoneIK_7qudk")
+modifications/7 = SubResource("SkeletonModification2DJiggle_3pp0d")
+modifications/8 = SubResource("SkeletonModification2DJiggle_vh2s8")
+modifications/9 = SubResource("SkeletonModification2DJiggle_2w1l6")
+
+[node name="Shooter" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 65
+collision_mask = 65
+
+[node name="HipCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(-1.63933, -35.9733)
+rotation = 0.0225602
+scale = Vector2(0.999994, 0.999994)
+polygon = PackedVector2Array(44, -2.1, 44, 5, 46.8, 24, 47.4, 24, 50, 30.6, 50, 39.8, 45.8, 44, 37.2, 44, 17, 46.2, 17, 44.5, 14, 43.6, -2, 46.4, -2, 45, -20, 45, -20, 43.4, -21.5, 42.8, -36, 45.4, -36, 43.4, -37.7, 42.7, -48, 45.7, -48, 43.2, -50, 42.2, -50, 30.4, -45, 14.7, -45, 0, -43, 0, -39, -5, -31.9, -5, 9, -1.2, 34, -5.7, 36.1, -7.3)
+
+[node name="ChestCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(-1.78045, -58.0406)
+rotation = -0.0270488
+scale = Vector2(0.999986, 0.999986)
+polygon = PackedVector2Array(13.8, -44, 17.4, -44, 33, -37.3, 33, -36, 43, -28, 43, -25.4, 50, -6.7, 50, 13.2, 49.7, 15, 48.1, 15, 29.1, 47, -32, 47, -32, 45, -36, 42, -36, 39.5, -46, 21.5, -46, 15, -47, -24, -45, -24, -36, -37, -33.4, -37, -2, -49, 9, -49)
+
+[node name="HeadCollisionPolygon2D2" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(-0.443463, -146.122)
+rotation = -0.0335938
+scale = Vector2(0.999983, 0.999983)
+polygon = PackedVector2Array(20, -66, 24, -63, 24, -46, 28.5, -29, 47, -16, 47, -13, 50.6, 0, 48, 0, 46, 2.7, 46, 12.5, 49, 17.4, 49, 26.2, 47.6, 33, 46.5, 33, 44.5, 40, 43, 40, 36, 49, 33.3, 49, 21.4, 54, 5.2, 54, -8, 55.2, -8, 53.8, -18, 52.8, -18, 51.1, -34, 41.1, -34, 38.6, -41, 27.6, -41, 22, -44.2, -6, -42.3, -6, -35.3, -22, -33.8, -22, -24.8, -31, -21.1, -31, -19, -31.5, -19, -35.1, -13, -39.1, -13, -46.1, -11.9, -64, -9.8, -64, -8, -65.8, -8, -68, 20, -68)
+
+[node name="LegRCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(-22.6877, -4.87021)
+rotation = 0.0162892
+scale = Vector2(0.99996, 0.99996)
+polygon = PackedVector2Array(11.5, -21.3, 11.5, -13.5, 13.5, 2.2, 13.5, 4.5, 12.5, 4.5, 12.5, 16.5, 10.4, 16.5, 5.4, 22.5, -5.5, 22.5, -5.5, 21.6, -12.5, 17.7, -12.5, 15.5, -13.5, 1.2, -13.5, -14.5, -12.9, -14.5, -10.5, -20.9, -10.5, -22.5, 0.5, -22.5)
+
+[node name="ShinRCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(-22.1817, 25.0072)
+rotation = -0.109455
+scale = Vector2(0.99991, 0.99991)
+polygon = PackedVector2Array(13, -21, 13, 20.5, 3.2, 20.5, 1.3, 18.6, -6.6, 21.5, -9, 21.5, -9, 19.7, -17, 15.7, -17, 11.5, -18, -1, -18, -3.5, -17, -3.5, -17, -9.5, -14.5, -9.5, -12, -10.7, -12, -19.3, -9.8, -21.5, 11.3, -21.5)
+
+[node name="FootRCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(-4.01992, 34.0022)
+rotation = -0.000147121
+scale = Vector2(0.9999, 0.9999)
+polygon = PackedVector2Array(14.5, -10.8, 14.5, -8.8, 16.5, -6.8, 16.5, 5, 10.3, 11, -12.5, 11, -12.5, 8.4, -16, -8, -13.9, -8, -12.5, -11.4, -12.5, -13, -2.5, -13)
+
+[node name="LegLCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(17.1641, -4.85882)
+rotation = 0.130292
+polygon = PackedVector2Array(11.5, -21.3, 11.5, -13.5, 13.5, 2.2, 13.5, 4.5, 12.5, 4.5, 12.5, 16.5, 10.4, 16.5, 5.4, 22.5, -5.5, 22.5, -5.5, 21.6, -12.5, 17.7, -12.5, 15.5, -13.5, 1.2, -13.5, -14.5, -12.9, -14.5, -10.5, -20.9, -10.5, -22.5, 0.5, -22.5)
+
+[node name="ShinLCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(14.3749, 24.0244)
+rotation = 0.0135416
+polygon = PackedVector2Array(13, -21, 13, 20.5, 3.2, 20.5, 1.3, 18.6, -6.6, 21.5, -9, 21.5, -9, 19.7, -17, 15.7, -17, 11.5, -18, -1, -18, -3.5, -17, -3.5, -17, -9.5, -14.5, -9.5, -12, -10.7, -12, -19.3, -9.8, -21.5, 11.3, -21.5)
+
+[node name="FootLCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(31.268, 34.0114)
+rotation = -0.00071759
+scale = Vector2(0.999957, 0.999957)
+polygon = PackedVector2Array(14.5, -10.8, 14.5, -8.8, 16.5, -6.8, 16.5, 5, 10.3, 11, -12.5, 11, -12.5, 8.4, -16, -8, -13.9, -8, -12.5, -11.4, -12.5, -13, -2.5, -13)
+
+[node name="ArmRCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(-39.0914, -81.892)
+rotation = 0.191785
+scale = Vector2(0.99998, 0.99998)
+polygon = PackedVector2Array(10, -25.4, 10, -23.4, 17, -17.4, 17, -4.3, 14.4, 10.5, 17.4, 24.5, 15, 24.5, 13.5, 26.5, -6, 26.5, -6, 25.8, -10.4, 12.5, -11, 12.5, -17, 4.1, -17, 0.9, -20.4, -17.5, -18.1, -17.5, -14.1, -23.5, -11.4, -23.5, -8, -24.9, -8, -26.5, -6.5, -26.5)
+
+[node name="ForeArmRCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(-37.476, -51.5942)
+rotation = 0.390576
+scale = Vector2(0.999978, 0.999978)
+polygon = PackedVector2Array(9, -12.1, 9, -9.5, 14, -0.5, 14, 6.7, 7.8, 14, -3.9, 14, -10, 8.9, -10, 5.4, -14, -5, -14, -10, -12.4, -10, -1.1, -14, 5.8, -14)
+
+[node name="HandRCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(-37.4755, -33.2099)
+rotation = 0.390576
+scale = Vector2(0.999978, 0.999978)
+polygon = PackedVector2Array(13.5, -17.8, 16.5, -14.8, 16.5, -11.5, 16.3, -11, 22.5, -4.8, 22.5, -0.9, 21.2, 8, 19.3, 8, 8.3, 18, 3.3, 18, 2.3, 19, -6.5, 19, -6.5, 17.8, -13.5, 10.8, -13.5, 7.5, -15.8, 3, -18.2, 3, -23.5, -1.2, -23.5, -10, -22.5, -10, -18.5, -15, -14.8, -15, -2.1, -19, 13.5, -19)
+
+[node name="ArmLCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(34.8826, -87.9498)
+rotation = 0.0267748
+scale = Vector2(0.999965, 0.999965)
+polygon = PackedVector2Array(10, -25.4, 10, -23.4, 17, -17.4, 17, -4.3, 14.4, 10.5, 17.4, 24.5, 15, 24.5, 13.5, 26.5, -6, 26.5, -6, 25.8, -10.4, 12.5, -11, 12.5, -17, 4.1, -17, 0.9, -20.4, -17.5, -18.1, -17.5, -14.1, -23.5, -11.4, -23.5, -8, -24.9, -8, -26.5, -6.5, -26.5)
+
+[node name="ForeArmLCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(41.3116, -59.5857)
+rotation = 0.141394
+scale = Vector2(0.999964, 0.999964)
+polygon = PackedVector2Array(9, -12.1, 9, -9.5, 14, -0.5, 14, 6.7, 7.8, 14, -3.9, 14, -10, 8.9, -10, 5.4, -14, -5, -14, -10, -12.4, -10, -1.1, -14, 5.8, -14)
+
+[node name="HandLCollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(46.1277, -43.7495)
+rotation = 0.141394
+scale = Vector2(0.999964, 0.999964)
+polygon = PackedVector2Array(13.5, -17.8, 16.5, -14.8, 16.5, -11.5, 16.3, -11, 22.5, -4.8, 22.5, -0.9, 21.2, 8, 19.3, 8, 8.3, 18, 3.3, 18, 2.3, 19, -6.5, 19, -6.5, 17.8, -13.5, 10.8, -13.5, 7.5, -15.8, 3, -18.2, 3, -23.5, -1.2, -23.5, -10, -22.5, -10, -18.5, -15, -14.8, -15, -2.1, -19, 13.5, -19)
+
+[node name="Sprites" type="Node2D" parent="CharacterBody2D"]
+
+[node name="ArmLSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(34.9094, -88.9494)
+rotation = 0.0267748
+scale = Vector2(0.999965, 0.999965)
+texture = ExtResource("1_ss0gj")
+
+[node name="ForeArmLSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(41.3116, -59.5857)
+rotation = 0.141394
+scale = Vector2(0.999964, 0.999964)
+texture = ExtResource("2_pb2s4")
+
+[node name="HandLSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(46.1277, -43.7495)
+rotation = 0.141394
+scale = Vector2(0.999964, 0.999964)
+texture = ExtResource("3_7mced")
+
+[node name="ChestSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(-1.78045, -58.0406)
+rotation = -0.0270488
+scale = Vector2(0.999986, 0.999986)
+texture = ExtResource("1_incko")
+
+[node name="LegLSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(17.1641, -4.85882)
+rotation = 0.130292
+texture = ExtResource("2_xc0e8")
+
+[node name="ShinLSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(14.3749, 24.0244)
+rotation = 0.0135416
+texture = ExtResource("3_jocar")
+
+[node name="FootLSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(31.268, 34.0114)
+rotation = -0.00071759
+scale = Vector2(0.999957, 0.999957)
+texture = ExtResource("4_4sieh")
+
+[node name="LegRSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(-22.6877, -4.87021)
+rotation = 0.0162892
+scale = Vector2(0.99996, 0.99996)
+texture = ExtResource("2_pssgg")
+
+[node name="ShinRSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(-22.1817, 25.0072)
+rotation = -0.109455
+scale = Vector2(0.99991, 0.99991)
+texture = ExtResource("3_juai2")
+
+[node name="FootRSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(-4.01992, 34.0022)
+rotation = -0.000147121
+scale = Vector2(0.9999, 0.9999)
+texture = ExtResource("4_ka4et")
+
+[node name="HipSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(-1.63933, -35.9733)
+rotation = 0.0225602
+scale = Vector2(0.999994, 0.999994)
+texture = ExtResource("2_ukxeu")
+
+[node name="HeadSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(-0.443462, -146.122)
+rotation = -0.0335938
+scale = Vector2(0.999983, 0.999983)
+texture = ExtResource("3_0k17s")
+
+[node name="ArmRSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(-38.7102, -83.8552)
+rotation = 0.191785
+scale = Vector2(0.99998, 0.99998)
+texture = ExtResource("13_35gec")
+
+[node name="ForeArmRSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(-37.476, -51.5942)
+rotation = 0.390576
+scale = Vector2(0.999978, 0.999978)
+texture = ExtResource("14_ewxcl")
+
+[node name="HandRSprite2D" type="Sprite2D" parent="CharacterBody2D/Sprites"]
+position = Vector2(-37.4755, -33.2099)
+rotation = 0.390576
+scale = Vector2(0.999978, 0.999978)
+texture = ExtResource("15_7rm1p")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="CharacterBody2D"]
+position = Vector2(-3, -30)
+modification_stack = SubResource("SkeletonModificationStack2D_aasx6")
+
+[node name="PelvisBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D"]
+position = Vector2(-1, 18)
+rest = Transform2D(1, 0, 0, 1, -1, 18)
+
+[node name="SkirtBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D"]
+position = Vector2(1, -8)
+rest = Transform2D(1, 0, 0, 1, 1, -8)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="SkirtCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D"]
+position = Vector2(1, -16)
+remote_path = NodePath("../../../../HipCollisionPolygon2D")
+
+[node name="SkirtRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/SkirtCollisionRemoteTransform2D"]
+remote_path = NodePath("../../../../../Sprites/HipSprite2D")
+
+[node name="ChestBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D"]
+position = Vector2(0, -5)
+rest = Transform2D(1, 0, 0, 1, 0, -5)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ChestCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D"]
+position = Vector2(2, -33)
+remote_path = NodePath("../../../../../ChestCollisionPolygon2D")
+
+[node name="ChestRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ChestCollisionRemoteTransform2D"]
+remote_path = NodePath("../../../../../../Sprites/ChestSprite2D")
+
+[node name="HeadMarker2D" type="Marker2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D"]
+position = Vector2(28.329, -123.827)
+rotation = -0.129441
+scale = Vector2(1.00001, 1.00001)
+
+[node name="HeadBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D"]
+position = Vector2(4, -78)
+rotation = 0.010971
+scale = Vector2(0.999999, 0.999999)
+rest = Transform2D(0.999939, 0.0109708, -0.0109708, 0.999939, 4, -78)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="HeadCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D"]
+position = Vector2(2, -43)
+remote_path = NodePath("../../../../../../HeadCollisionPolygon2D2")
+
+[node name="HeadRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D/HeadCollisionRemoteTransform2D"]
+position = Vector2(9.53674e-07, 0)
+remote_path = NodePath("../../../../../../../Sprites/HeadSprite2D")
+
+[node name="HairRMarker2D" type="Marker2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D"]
+position = Vector2(-83.449, -51.0625)
+
+[node name="HairLMarker2D" type="Marker2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D"]
+position = Vector2(100, -56)
+
+[node name="HairLBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D"]
+position = Vector2(30.3838, -56.3368)
+rotation = -0.308374
+scale = Vector2(1, 1)
+rest = Transform2D(0.952828, -0.30351, 0.30351, 0.952828, 30.3838, -56.3368)
+auto_calculate_length_and_angle = false
+length = 50.0
+bone_angle = 25.714
+metadata/_local_pose_override_enabled_ = true
+
+[node name="HairLSprite2D" type="Sprite2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D/HairLBone2D"]
+position = Vector2(25, 1)
+texture = ExtResource("5_2bslw")
+
+[node name="HairRBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D"]
+position = Vector2(-15, -60)
+rotation = 0.0161775
+scale = Vector2(1, 1)
+rest = Transform2D(0.999869, 0.0161768, -0.0161768, 0.999869, -15, -60)
+auto_calculate_length_and_angle = false
+length = 60.0
+bone_angle = -205.714
+metadata/_local_pose_override_enabled_ = true
+
+[node name="HairRSprite2D" type="Sprite2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D/HairRBone2D"]
+position = Vector2(-27, 3.00001)
+texture = ExtResource("4_k6y81")
+
+[node name="ArmRBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D"]
+position = Vector2(-34, -70)
+rest = Transform2D(1, 0, 0, 1, -34, -70)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ArmRCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmRBone2D"]
+position = Vector2(2, 12)
+remote_path = NodePath("../../../../../../ArmRCollisionPolygon2D")
+
+[node name="ArmRRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmRBone2D/ArmRCollisionRemoteTransform2D"]
+position = Vector2(0, -2)
+remote_path = NodePath("../../../../../../../Sprites/ArmRSprite2D")
+
+[node name="ForeArmRBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmRBone2D"]
+position = Vector2(8, 33)
+rest = Transform2D(1, 0, 0, 1, 8, 33)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ForeArmRCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmRBone2D/ForeArmRBone2D"]
+position = Vector2(3, 8)
+remote_path = NodePath("../../../../../../../ForeArmRCollisionPolygon2D")
+
+[node name="ForeArmRRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmRBone2D/ForeArmRBone2D/ForeArmRCollisionRemoteTransform2D"]
+remote_path = NodePath("../../../../../../../../Sprites/ForeArmRSprite2D")
+
+[node name="HandRBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmRBone2D/ForeArmRBone2D"]
+position = Vector2(7, 15)
+rest = Transform2D(1, 0, 0, 1, 7, 15)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 65.915
+
+[node name="HandRCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmRBone2D/ForeArmRBone2D/HandRBone2D"]
+position = Vector2(3, 10)
+remote_path = NodePath("../../../../../../../../HandRCollisionPolygon2D")
+
+[node name="HandRRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmRBone2D/ForeArmRBone2D/HandRBone2D/HandRCollisionRemoteTransform2D"]
+remote_path = NodePath("../../../../../../../../../Sprites/HandRSprite2D")
+
+[node name="ArmLBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D"]
+position = Vector2(38, -72)
+rest = Transform2D(1, 0, 0, 1, 38, -72)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ArmLCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmLBone2D"]
+position = Vector2(2, 10)
+remote_path = NodePath("../../../../../../ArmLCollisionPolygon2D")
+
+[node name="ArmLRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmLBone2D/ArmLCollisionRemoteTransform2D"]
+position = Vector2(0, -1)
+remote_path = NodePath("../../../../../../../Sprites/ArmLSprite2D")
+
+[node name="ForeArmLBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmLBone2D"]
+position = Vector2(8, 31)
+rest = Transform2D(1, 0, 0, 1, 8, 31)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ForeArmLCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmLBone2D/ForeArmLBone2D"]
+position = Vector2(2, 7)
+remote_path = NodePath("../../../../../../../ForeArmLCollisionPolygon2D")
+
+[node name="ForeArmLRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmLBone2D/ForeArmLBone2D/ForeArmLCollisionRemoteTransform2D"]
+remote_path = NodePath("../../../../../../../../Sprites/ForeArmLSprite2D")
+
+[node name="HandLBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmLBone2D/ForeArmLBone2D"]
+position = Vector2(5, 13)
+rest = Transform2D(1, 0, 0, 1, 5, 13)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 60.845
+
+[node name="HandLCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmLBone2D/ForeArmLBone2D/HandLBone2D"]
+position = Vector2(4, 9)
+remote_path = NodePath("../../../../../../../../HandLCollisionPolygon2D")
+
+[node name="HandLRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmLBone2D/ForeArmLBone2D/HandLBone2D/HandLCollisionRemoteTransform2D"]
+remote_path = NodePath("../../../../../../../../../Sprites/HandLSprite2D")
+
+[node name="LegRBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D"]
+position = Vector2(-19, -8)
+rest = Transform2D(1, 0, 0, 1, -19, -8)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="LegRCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegRBone2D"]
+position = Vector2(0.558746, 15.1233)
+remote_path = NodePath("../../../../LegRCollisionPolygon2D")
+
+[node name="LegRRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegRBone2D/LegRCollisionRemoteTransform2D"]
+remote_path = NodePath("../../../../../Sprites/LegRSprite2D")
+
+[node name="ShinRBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegRBone2D"]
+position = Vector2(1, 29)
+rest = Transform2D(1, 0, 0, 1, 1, 29)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ShinRCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegRBone2D/ShinRBone2D"]
+position = Vector2(0, 16)
+rotation = -0.0912748
+remote_path = NodePath("../../../../../ShinRCollisionPolygon2D")
+
+[node name="ShinRRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegRBone2D/ShinRBone2D/ShinRCollisionRemoteTransform2D"]
+remote_path = NodePath("../../../../../../Sprites/ShinRSprite2D")
+
+[node name="FootRBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegRBone2D/ShinRBone2D"]
+position = Vector2(0, 25)
+rest = Transform2D(1, 0, 0, 1, 0, 25)
+auto_calculate_length_and_angle = false
+length = 30.408
+bone_angle = 0.0
+metadata/_local_pose_override_enabled_ = true
+
+[node name="FootRCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegRBone2D/ShinRBone2D/FootRBone2D"]
+position = Vector2(18, 0)
+remote_path = NodePath("../../../../../../FootRCollisionPolygon2D")
+
+[node name="FootRRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegRBone2D/ShinRBone2D/FootRBone2D/FootRCollisionRemoteTransform2D"]
+remote_path = NodePath("../../../../../../../Sprites/FootRSprite2D")
+
+[node name="ToeRMarker2D" type="Marker2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegRBone2D/ShinRBone2D"]
+position = Vector2(33.0157, 25.5954)
+
+[node name="LegLBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D"]
+position = Vector2(21, -7)
+rest = Transform2D(1, 0, 0, 1, 21, -7)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="LegLCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegLBone2D"]
+position = Vector2(2, 14)
+remote_path = NodePath("../../../../LegLCollisionPolygon2D")
+
+[node name="LegLRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegLBone2D/LegLCollisionRemoteTransform2D"]
+remote_path = NodePath("../../../../../Sprites/LegLSprite2D")
+
+[node name="ShinLBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegLBone2D"]
+position = Vector2(2, 26)
+rest = Transform2D(1, 0, 0, 1, 2, 26)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="ShinLCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegLBone2D/ShinLBone2D"]
+position = Vector2(-1, 17)
+remote_path = NodePath("../../../../../ShinLCollisionPolygon2D")
+
+[node name="ShinLRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegLBone2D/ShinLBone2D/ShinLCollisionRemoteTransform2D"]
+remote_path = NodePath("../../../../../../Sprites/ShinLSprite2D")
+
+[node name="FootLBone2D" type="Bone2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegLBone2D/ShinLBone2D"]
+position = Vector2(-1, 25)
+rest = Transform2D(1, 0, 0, 1, -1, 25)
+auto_calculate_length_and_angle = false
+length = 30.408
+bone_angle = 0.0
+metadata/_local_pose_override_enabled_ = true
+
+[node name="FootLCollisionRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegLBone2D/ShinLBone2D/FootLBone2D"]
+position = Vector2(17, 2)
+remote_path = NodePath("../../../../../../FootLCollisionPolygon2D")
+
+[node name="FootLRemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegLBone2D/ShinLBone2D/FootLBone2D/FootLCollisionRemoteTransform2D"]
+remote_path = NodePath("../../../../../../../Sprites/FootLSprite2D")
+
+[node name="ToeLMarker2D" type="Marker2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D/LegLBone2D/ShinLBone2D"]
+position = Vector2(30.7308, 24.5475)
+
+[node name="TorsoMarker2D" type="Marker2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D"]
+position = Vector2(3, -91)
+rotation = 0.010971
+scale = Vector2(0.999999, 0.999999)
+
+[node name="FootRMarker2D" type="Marker2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D"]
+position = Vector2(-18, 47)
+
+[node name="FootLMarker2D" type="Marker2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D"]
+position = Vector2(18, 49)
+
+[node name="HandRMarker2D" type="Marker2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D"]
+position = Vector2(-32, -22)
+
+[node name="HandLMarker2D" type="Marker2D" parent="CharacterBody2D/Skeleton2D/PelvisBone2D"]
+position = Vector2(53, -17)
