@@ -39,4 +39,4 @@ texture = ExtResource("1_5ju45")
 [node name="SplotionAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_4xsmi")
-frame_progress = 0.374048
+frame_progress = 0.355666
