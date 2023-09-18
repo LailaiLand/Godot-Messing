@@ -1,42 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5fbap7abvq23"]
+[gd_scene load_steps=3 format=3 uid="uid://b5fbap7abvq23"]
 
-[ext_resource type="Texture2D" uid="uid://bistifsph1rnv" path="res://Art/PNG/Poop/Pie.png" id="1_5ju45"]
-[ext_resource type="Texture2D" uid="uid://4tgupmfnk5l6" path="res://Art/PNG/Poop/Splotion1.png" id="2_nhwjk"]
-[ext_resource type="Texture2D" uid="uid://blr7a17ueqfcb" path="res://Art/PNG/Poop/Splotion2.png" id="3_6ahvc"]
-[ext_resource type="Texture2D" uid="uid://bgsah2obgqqlm" path="res://Art/PNG/Poop/Splotion3.png" id="4_5c8du"]
-[ext_resource type="Texture2D" uid="uid://c4bu4dfildpni" path="res://Art/PNG/Poop/Splotion4.png" id="5_2fovx"]
+[ext_resource type="Script" path="res://Pie.cs" id="1_2w4it"]
+[ext_resource type="Texture2D" uid="uid://bistifsph1rnv" path="res://Art/PNG/Poop/Pie.png" id="2_41jui"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4xsmi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_nhwjk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_6ahvc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_5c8du")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_2fovx")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[node name="Pie" type="Area2D"]
+script = ExtResource("1_2w4it")
 
-[node name="Pie" type="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_41jui")
 
-[node name="PieRigidBody2D" type="RigidBody2D" parent="."]
-
-[node name="PieCollisionPolygon2D" type="CollisionPolygon2D" parent="PieRigidBody2D"]
-polygon = PackedVector2Array(1, -48.8, 1, -47.2, 16, -39.2, 16, -36.9, 29, -22.8, 29, -20.5, 32.7, -13, 39, -22, 49, -22, 49, -13, 47.7, -13, 44.6, 1, 43, 1, 29, 21, 27.5, 21, 19, 27, 19, 28.7, 14, 35, 11.4, 35, 4, 38.3, -1.9, 48, -4.9, 48, -12.7, 50, -19, 50, -19, 49.4, -49, 39.4, -49, 37, -50, -40, -45.4, -40, -18, -49.5, -8.1, -50)
-
-[node name="PieSprite2D" type="Sprite2D" parent="PieRigidBody2D"]
-texture = ExtResource("1_5ju45")
-
-[node name="SplotionAnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_4xsmi")
-frame_progress = 0.355666
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(16, -41.2, 16, -39.7, 31, -22.8, 31, -20.5, 33.6, -16, 38.9, -24, 48.5, -24, 50, -18.8, 50, -13, 46.6, 1, 45, 1, 31, 21, 29.8, 21, 13.8, 37, 11.4, 37, 4, 40.3, 4, 41.6, -2, 50, -24.2, 50, -49, 41.4, -49, 40.1, -50, 39.4, -50, -40, -36.5, -47, -33.1, -47, -21.9, -50, -1.6, -50)

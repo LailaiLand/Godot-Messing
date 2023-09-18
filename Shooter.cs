@@ -11,21 +11,26 @@ public partial class Shooter : CharacterBody2D
 	private bool _isHit = false;
 	private bool _isDance = false;
 	private bool _isThrow = false;
+	
 
-
+	[Export] public Vector2 AimDirection = Vector2.Zero;
 	[Export] public int Speed { get; set; } = 200;
 	[Export] public int Health { get; set; } = 3;
+
 
 	[Signal]
 	public delegate void FlipEventHandler();
 	[Signal]
 	public delegate void UnFlipEventHandler();
 
+	[Signal]
+	public delegate void ShootEventHandler();
+
 
 	public override void _Ready()
 	{
 		_animation = GetNode<AnimationPlayer>("AnimationPlayer");
-		GD.Print("Shooter Loaded");
+		
 
 	}
 
@@ -33,7 +38,14 @@ public partial class Shooter : CharacterBody2D
 	{
 		if (_isIdle) _animation.Play("Partial/Idle");
 		else if (_isRun) _animation.Play("Simple/Run");
+		else if (_isDance) _animation.Play("Simple/Dance");
+
+		AimDirection = Input.GetVector("leftAim", "rightAim", "upAim", "downAim");
+
+		if (Input.IsActionJustPressed("shoot")) EmitSignal("Shoot");
+
 	}
+
 
 	public void GetInput()
 	{
@@ -55,16 +67,16 @@ public partial class Shooter : CharacterBody2D
 			_isRun = true;
 		}
 
-		if (Velocity.X < 0)
-		{
-			EmitSignal("Flip");
-			GD.Print("Flip Emitted");
-		}
+		//if (Velocity.X < 0)
+		//{
+		//	EmitSignal("Flip");
+		//	GD.Print("Flip Emitted");
+		//}
 
-		if (Velocity.X > 0)
-		{
-			EmitSignal("UnFlip");
-		}
+		//if (Velocity.X > 0)
+		//{
+		//	EmitSignal("UnFlip");
+		//}
 
 		MoveAndSlide();
 	}

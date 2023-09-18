@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhkww62mrf1gv"]
+
+[ext_resource type="Texture2D" uid="uid://4tgupmfnk5l6" path="res://Art/PNG/Poop/Splotion1.png" id="1_ejv73"]
+[ext_resource type="Texture2D" uid="uid://blr7a17ueqfcb" path="res://Art/PNG/Poop/Splotion2.png" id="2_2mitf"]
+[ext_resource type="Texture2D" uid="uid://bgsah2obgqqlm" path="res://Art/PNG/Poop/Splotion3.png" id="3_1hvhk"]
+[ext_resource type="Texture2D" uid="uid://c4bu4dfildpni" path="res://Art/PNG/Poop/Splotion4.png" id="4_r7p6u"]
+[ext_resource type="Script" path="res://Piesplotion.cs" id="5_w8ofr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gtrlb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ejv73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2mitf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1hvhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r7p6u")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Piesplotion" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_gtrlb")
+frame = 3
+frame_progress = 1.0
+script = ExtResource("5_w8ofr")

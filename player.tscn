@@ -1,16 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dcr0acigufprl"]
 
 [ext_resource type="Script" path="res://Player.cs" id="1_nufd5"]
-[ext_resource type="PackedScene" uid="uid://dqxyx75plsbkt" path="res://shooter.tscn" id="2_uyqo2"]
+[ext_resource type="PackedScene" uid="uid://cfayq4thiirsh" path="res://biter.tscn" id="2_gph5b"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_nufd5")
 
-[node name="Shooter" parent="." instance=ExtResource("2_uyqo2")]
+[node name="Biter" parent="." instance=ExtResource("2_gph5b")]
 
-[node name="Camera2D" type="Camera2D" parent="Shooter"]
+[node name="Camera2D" type="Camera2D" parent="Biter"]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
-
-[connection signal="Flip" from="Shooter" to="." method="OnShooterFlip"]
-[connection signal="UnFlip" from="Shooter" to="." method="OnShooterUnFlip"]

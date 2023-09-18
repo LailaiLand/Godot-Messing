@@ -3,8 +3,18 @@ using System;
 
 public partial class Main : Node
 {
+	private Marker2D _origin;
+
 	[Export]
 	public PackedScene SpawnPoop { get; set; }
+		[Export]
+	public PackedScene Piejectile { get; set; }
+
+	public override void _Ready()
+	{
+		_origin = GetNode<Origin>("Shooter/AimingMarkers/Origin");
+	}
+
 	private void OnBiterEat()
 	{
 		Poop poop = SpawnPoop.Instantiate<Poop>();
@@ -17,5 +27,13 @@ public partial class Main : Node
 		//poop.ZIndex = 2;
 		AddChild(poop);
 	}
+	private void OnShooterShoot()
+	{
+		Pie pie = Piejectile.Instantiate<Pie>();      
+		AddChild(pie);
+
+		pie.Transform = _origin.GlobalTransform;
+	}
 
 }
+
