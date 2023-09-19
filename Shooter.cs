@@ -5,7 +5,6 @@ public partial class Shooter : CharacterBody2D
 {
 	private AnimationPlayer _animation;
 
-
 	private bool _isIdle = false;
 	private bool _isRun = false;
 	private bool _isHit = false;
@@ -40,8 +39,6 @@ public partial class Shooter : CharacterBody2D
 		else if (_isRun) _animation.Play("Simple/Run");
 		else if (_isDance) _animation.Play("Simple/Dance");
 
-		AimDirection = Input.GetVector("leftAim", "rightAim", "upAim", "downAim");
-
 		if (Input.IsActionJustPressed("shoot")) EmitSignal("Shoot");
 
 	}
@@ -67,16 +64,15 @@ public partial class Shooter : CharacterBody2D
 			_isRun = true;
 		}
 
-		//if (Velocity.X < 0)
-		//{
-		//	EmitSignal("Flip");
-		//	GD.Print("Flip Emitted");
-		//}
+		if (Velocity.X < 0)
+		{
+			EmitSignal("Flip");
+		}
 
-		//if (Velocity.X > 0)
-		//{
-		//	EmitSignal("UnFlip");
-		//}
+		if (Velocity.X > 0)
+		{
+			EmitSignal("UnFlip");
+		}
 
 		MoveAndSlide();
 	}

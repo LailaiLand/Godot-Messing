@@ -1,13 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5fbap7abvq23"]
 
-[ext_resource type="Script" path="res://Pie.cs" id="1_2w4it"]
+[ext_resource type="Script" path="res://pie.gd" id="1_gyqrb"]
 [ext_resource type="Texture2D" uid="uid://bistifsph1rnv" path="res://Art/PNG/Poop/Pie.png" id="2_41jui"]
 
 [node name="Pie" type="Area2D"]
-script = ExtResource("1_2w4it")
+scale = Vector2(0.35, 0.35)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_gyqrb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_41jui")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(16, -41.2, 16, -39.7, 31, -22.8, 31, -20.5, 33.6, -16, 38.9, -24, 48.5, -24, 50, -18.8, 50, -13, 46.6, 1, 45, 1, 31, 21, 29.8, 21, 13.8, 37, 11.4, 37, 4, 40.3, 4, 41.6, -2, 50, -24.2, 50, -49, 41.4, -49, 40.1, -50, 39.4, -50, -40, -36.5, -47, -33.1, -47, -21.9, -50, -1.6, -50)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

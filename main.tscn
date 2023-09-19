@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cqid4o8cgcpdv" path="res://poop.tscn" id="2_5ypui"]
 [ext_resource type="PackedScene" uid="uid://cq0dstrdi4d45" path="res://crawler.tscn" id="2_e7gkf"]
 [ext_resource type="PackedScene" uid="uid://coa7oobpvp60u" path="res://Castle.tscn" id="3_cm6ns"]
-[ext_resource type="PackedScene" uid="uid://cfayq4thiirsh" path="res://biter.tscn" id="5_koa8r"]
+[ext_resource type="PackedScene" uid="uid://dcr0acigufprl" path="res://player.tscn" id="5_l4v8a"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_fppmu")
@@ -123,9 +123,5 @@ position = Vector2(-856, 532)
 [node name="Crawler33" parent="." instance=ExtResource("2_e7gkf")]
 position = Vector2(-955, 404)
 
-[node name="Biter" parent="." instance=ExtResource("5_koa8r")]
-position = Vector2(-495, 329)
-
-[node name="Camera2D" type="Camera2D" parent="Biter"]
-
-[connection signal="Eat" from="Biter" to="." method="OnBiterEat"]
+[node name="Player" parent="." instance=ExtResource("5_l4v8a")]
+scale = Vector2(0.35, 0.35)
