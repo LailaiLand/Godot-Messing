@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cq0dstrdi4d45"]
+[gd_scene load_steps=12 format=3 uid="uid://cq0dstrdi4d45"]
 
+[ext_resource type="Script" path="res://Crawler.cs" id="1_c2i43"]
 [ext_resource type="Texture2D" uid="uid://el1jorytajbg" path="res://Art/PNG/Crawler/CrawlerWalk1.png" id="1_gtjol"]
-[ext_resource type="Script" path="res://Crawler.cs" id="1_s4m41"]
 [ext_resource type="Texture2D" uid="uid://db3o3sf8w2me7" path="res://Art/PNG/Crawler/CrawlerWalk2.png" id="2_oi82l"]
 [ext_resource type="Texture2D" uid="uid://b263fewojcjrv" path="res://Art/PNG/Crawler/CrawlerWalk3.png" id="3_cu85d"]
 [ext_resource type="Texture2D" uid="uid://dmw6qoqke6hsi" path="res://Art/PNG/Crawler/CrawlerWalk4.png" id="4_6k7jw"]
 [ext_resource type="Texture2D" uid="uid://b0upbk258e5qv" path="res://Art/PNG/Crawler/CrawlerWalk5.png" id="5_8q1f2"]
 [ext_resource type="Texture2D" uid="uid://cpfnbuq0hpq0y" path="res://Art/PNG/Crawler/CrawlerWalk6.png" id="6_a3hky"]
+[ext_resource type="Script" path="res://CrawlerArea2D.gd" id="8_unll7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yc8gx"]
 radius = 25.0
@@ -42,8 +43,10 @@ animations = [{
 radius = 26.0
 height = 74.0
 
-[node name="Crawler" type="CharacterBody2D"]
-script = ExtResource("1_s4m41")
+[node name="Crawler" type="CharacterBody2D" groups=["crawler"]]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_c2i43")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_yc8gx")
@@ -55,9 +58,12 @@ animation = &"walk"
 frame = 2
 frame_progress = 0.921738
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CrawlerArea2D" type="Area2D" parent="."]
 collision_layer = 5
 collision_mask = 5
+script = ExtResource("8_unll7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrawlerArea2D"]
 shape = SubResource("CapsuleShape2D_v8ius")
+
+[connection signal="body_entered" from="CrawlerArea2D" to="." method="OnCrawlerArea2dBodyEntered"]

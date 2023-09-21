@@ -4,9 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bistifsph1rnv" path="res://Art/PNG/Poop/Pie.png" id="2_41jui"]
 
 [node name="Pie" type="Area2D"]
-scale = Vector2(0.35, 0.35)
-collision_layer = 0
-collision_mask = 4
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_gyqrb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

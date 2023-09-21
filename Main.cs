@@ -8,6 +8,9 @@ public partial class Main : Node
 	[Export]
 	public PackedScene SpawnPoop { get; set; }
 
+	[Signal]
+	public delegate void DecreaseHealthEventHandler();
+
 	public override void _Ready()
 	{
 	}
@@ -19,7 +22,7 @@ public partial class Main : Node
 		poop.Position = biterLocation;
 		AddChild(poop);
 	}
-
-
 }
+
+
 

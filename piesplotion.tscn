@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://blr7a17ueqfcb" path="res://Art/PNG/Poop/Splotion2.png" id="2_2mitf"]
 [ext_resource type="Texture2D" uid="uid://bgsah2obgqqlm" path="res://Art/PNG/Poop/Splotion3.png" id="3_1hvhk"]
 [ext_resource type="Texture2D" uid="uid://c4bu4dfildpni" path="res://Art/PNG/Poop/Splotion4.png" id="4_r7p6u"]
-[ext_resource type="Script" path="res://Piesplotion.cs" id="5_w8ofr"]
+[ext_resource type="Script" path="res://piesplotion.gd" id="5_talaj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gtrlb"]
 animations = [{
@@ -30,4 +30,6 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_gtrlb")
 frame = 3
 frame_progress = 1.0
-script = ExtResource("5_w8ofr")
+script = ExtResource("5_talaj")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

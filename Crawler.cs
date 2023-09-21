@@ -16,3 +16,5 @@ public partial class Crawler : CharacterBody2D
 		QueueFree();
 	}
 }
+
+

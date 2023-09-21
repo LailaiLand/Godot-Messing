@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcr0acigufprl"]
+[gd_scene load_steps=5 format=3 uid="uid://dcr0acigufprl"]
 
 [ext_resource type="PackedScene" uid="uid://dqxyx75plsbkt" path="res://shooter.tscn" id="1_byyai"]
 [ext_resource type="Script" path="res://player.gd" id="1_i7hn2"]
+[ext_resource type="Script" path="res://ShotTimer.gd" id="3_dsx5k"]
+[ext_resource type="Script" path="res://HitTimer.gd" id="4_yw2hs"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_i7hn2")
@@ -11,4 +13,23 @@ script = ExtResource("1_i7hn2")
 [node name="Camera2D" type="Camera2D" parent="Shooter"]
 zoom = Vector2(2, 2)
 
+[node name="ShotTimer" type="Timer" parent="."]
+wait_time = 0.5
+script = ExtResource("3_dsx5k")
+
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 2.0
+script = ExtResource("4_yw2hs")
+
+[connection signal="clown_hit" from="." to="Shooter" method="OnPlayerClownHit"]
+[connection signal="clown_hit" from="." to="HitTimer" method="_on_player_clown_hit"]
+[connection signal="shot_fired" from="." to="ShotTimer" method="_on_player_shot_fired"]
+[connection signal="start_dance" from="." to="Shooter" method="OnPlayerStartDance"]
+[connection signal="start_throw" from="." to="Shooter" method="OnPlayerStartThrow"]
+[connection signal="stop_dance" from="." to="Shooter" method="OnPlayerStopDance"]
+[connection signal="stop_throw" from="." to="Shooter" method="OnPlayerStopThrow"]
+[connection signal="Flip" from="Shooter" to="." method="_on_shooter_flip"]
+[connection signal="HitDetected" from="Shooter" to="." method="_on_shooter_hit_detected"]
 [connection signal="Shoot" from="Shooter" to="." method="_on_shooter_shoot"]
+[connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
+[connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]

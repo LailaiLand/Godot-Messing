@@ -1,9 +1,23 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqntwpjsb4ntk"]
 
+[ext_resource type="Script" path="res://tin.gd" id="1_rlkn8"]
 [ext_resource type="Texture2D" uid="uid://bvcmx4c2v7n85" path="res://Art/PNG/Poop/Tin.png" id="1_uhjtm"]
-[ext_resource type="Script" path="res://Tin.cs" id="2_da0r4"]
 
-[node name="Tin" type="Sprite2D"]
+[node name="Tin" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 7
+mass = 0.01
+gravity_scale = 0.0
+max_contacts_reported = 3
+contact_monitor = true
+script = ExtResource("1_rlkn8")
+
+[node name="TinSprite" type="Sprite2D" parent="."]
 rotation = -1.5708
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("1_uhjtm")
-script = ExtResource("2_da0r4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = -1.5708
+scale = Vector2(0.35, 0.35)
+polygon = PackedVector2Array(-10, 48.8, -11.2, 50, -28.3, 50, -37, 47.5, -37, 46.2, -50, 39.3, -50, -40, -36.5, -47, -33.1, -47, -21.9, -50, -10, -50)
