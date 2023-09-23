@@ -28,7 +28,6 @@ script = ExtResource("4_yw2hs")
 [connection signal="start_throw" from="." to="Shooter" method="OnPlayerStartThrow"]
 [connection signal="stop_dance" from="." to="Shooter" method="OnPlayerStopDance"]
 [connection signal="stop_throw" from="." to="Shooter" method="OnPlayerStopThrow"]
-[connection signal="Flip" from="Shooter" to="." method="_on_shooter_flip"]
 [connection signal="HitDetected" from="Shooter" to="." method="_on_shooter_hit_detected"]
 [connection signal="Shoot" from="Shooter" to="." method="_on_shooter_shoot"]
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]

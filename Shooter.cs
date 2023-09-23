@@ -115,7 +115,11 @@ public partial class Shooter : CharacterBody2D
 	private void OnPlayerClownHit()
 	{
 		Health--;
-		if (Health <= 0) Visible = false;
+		if (Health <= 0)
+		{
+			GD.Print("Health", Health);
+			//Visible = false;
+		}
 	}
 }
 
