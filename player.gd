@@ -14,8 +14,7 @@ signal clown_hit
 func _process(_delta):
 	aim_direction = Input.get_vector("leftAim", "rightAim", "upAim", "downAim").angle()
 	$Shooter/AimingMarkers/Origin.rotation = aim_direction
-	if $Shooter.Health < 0:
-		$Shooter.queue_free()
+	
 
 func _on_shooter_shoot():
 	if !cooldown:

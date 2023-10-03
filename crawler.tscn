@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cq0dstrdi4d45"]
 
-[ext_resource type="Script" path="res://crawler.cs" id="1_5dqn2"]
+[ext_resource type="Script" path="res://crawler.gd" id="1_bwut0"]
 [ext_resource type="Texture2D" uid="uid://el1jorytajbg" path="res://Art/PNG/Crawler/CrawlerWalk1.png" id="1_gtjol"]
 [ext_resource type="Texture2D" uid="uid://db3o3sf8w2me7" path="res://Art/PNG/Crawler/CrawlerWalk2.png" id="2_oi82l"]
 [ext_resource type="Texture2D" uid="uid://b263fewojcjrv" path="res://Art/PNG/Crawler/CrawlerWalk3.png" id="3_cu85d"]
@@ -50,7 +50,7 @@ radius = 239.207
 [node name="Crawler" type="CharacterBody2D" groups=["crawler"]]
 collision_layer = 5
 collision_mask = 5
-script = ExtResource("1_5dqn2")
+script = ExtResource("1_bwut0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_yc8gx")
