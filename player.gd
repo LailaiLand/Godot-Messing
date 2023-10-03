@@ -4,6 +4,9 @@ extends Node2D
 var aim_direction = Vector2.ZERO
 var cooldown = false
 var is_hit = false
+var flashing = false
+
+signal flash
 signal shot_fired
 signal start_dance
 signal stop_dance
@@ -14,6 +17,9 @@ signal clown_hit
 func _process(_delta):
 	aim_direction = Input.get_vector("leftAim", "rightAim", "upAim", "downAim").angle()
 	$Shooter/AimingMarkers/Origin.rotation = aim_direction
+	if flashing:
+		$Shooter.visible = false
+	else: $Shooter.visible = true
 	
 
 func _on_shooter_shoot():
@@ -25,7 +31,6 @@ func _on_shooter_shoot():
 		emit_signal("start_throw")
 		emit_signal("shot_fired")
 
-
 func _on_shot_timer_timeout():
 	emit_signal("stop_throw")
 	cooldown = false
@@ -33,12 +38,16 @@ func _on_shot_timer_timeout():
 func _on_shooter_hit_detected():
 	if !is_hit:
 		is_hit = true
+		flashing = true
 		emit_signal("clown_hit")
+		emit_signal("flash")
 
 func _on_hit_timer_timeout():
 	is_hit = false
 
-
-
-#func _on_shooter_flip():
-	#$Shooter.scale.x = -0.35
+func _on_flash_timer_timeout():
+	if is_hit:
+		flashing = !flashing
+		emit_signal("flash")
+	else: flashing = false
+	

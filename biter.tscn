@@ -1,6 +1,5 @@
-[gd_scene load_steps=26 format=3 uid="uid://cfayq4thiirsh"]
+[gd_scene load_steps=25 format=3 uid="uid://cfayq4thiirsh"]
 
-[ext_resource type="Script" path="res://Biter.cs" id="1_ug3lv"]
 [ext_resource type="Texture2D" uid="uid://dl4h5744ie750" path="res://Art/PNG/Biter/BiterStand1.png" id="1_vg8hr"]
 [ext_resource type="Texture2D" uid="uid://7wbjuw72u7us" path="res://Art/PNG/Biter/BiterEat1.png" id="2_ijc06"]
 [ext_resource type="Texture2D" uid="uid://1xnpdy5acesp" path="res://Art/PNG/Biter/BiterStand2.png" id="2_uh67s"]
@@ -108,7 +107,6 @@ animations = [{
 }]
 
 [node name="Biter" type="CharacterBody2D"]
-script = ExtResource("1_ug3lv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_as_relative = false

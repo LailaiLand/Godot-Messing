@@ -1474,27 +1474,27 @@ scale = Vector2(0.999658, 0.999658)
 polygon = PackedVector2Array(13.8, -44, 17.4, -44, 33, -37.3, 33, -36, 43, -28, 43, -25.4, 50, -6.7, 50, 13.2, 49.7, 15, 48.1, 15, 29.1, 47, -32, 47, -32, 45, -36, 42, -36, 39.5, -46, 21.5, -46, 15, -47, -24, -45, -24, -36, -37, -33.4, -37, -2, -49, 9, -49)
 
 [node name="HeadCollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
-position = Vector2(2.71549, -145.966)
+position = Vector2(2.71547, -145.966)
 rotation = -0.00655735
-scale = Vector2(0.999616, 0.999616)
+scale = Vector2(0.999607, 0.999607)
 polygon = PackedVector2Array(20, -66, 24, -63, 24, -46, 28.5, -29, 47, -16, 47, -13, 50.6, 0, 48, 0, 46, 2.7, 46, 12.5, 49, 17.4, 49, 26.2, 47.6, 33, 46.5, 33, 44.5, 40, 43, 40, 36, 49, 33.3, 49, 21.4, 54, 5.2, 54, -8, 55.2, -8, 53.8, -18, 52.8, -18, 51.1, -34, 41.1, -34, 38.6, -41, 27.6, -41, 22, -44.2, -6, -42.3, -6, -35.3, -22, -33.8, -22, -24.8, -31, -21.1, -31, -19, -31.5, -19, -35.1, -13, -39.1, -13, -46.1, -11.9, -64, -9.8, -64, -8, -65.8, -8, -68, 20, -68)
 
 [node name="LegRCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-22.6854, -4.87128)
+position = Vector2(-22.6854, -4.871)
 rotation = 0.0163472
-scale = Vector2(0.999799, 0.999799)
+scale = Vector2(0.999817, 0.999817)
 polygon = PackedVector2Array(11.5, -21.3, 11.5, -13.5, 13.5, 2.2, 13.5, 4.5, 12.5, 4.5, 12.5, 16.5, 10.4, 16.5, 5.4, 22.5, -5.5, 22.5, -5.5, 21.6, -12.5, 17.7, -12.5, 15.5, -13.5, 1.2, -13.5, -14.5, -12.9, -14.5, -10.5, -20.9, -10.5, -22.5, 0.5, -22.5)
 
 [node name="ShinRCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-22.1812, 25.0013)
+position = Vector2(-22.1812, 25.0022)
 rotation = -0.109397
-scale = Vector2(0.999749, 0.999749)
+scale = Vector2(0.999767, 0.999767)
 polygon = PackedVector2Array(13, -21, 13, 20.5, 3.2, 20.5, 1.3, 18.6, -6.6, 21.5, -9, 21.5, -9, 19.7, -17, 15.7, -17, 11.5, -18, -1, -18, -3.5, -17, -3.5, -17, -9.5, -14.5, -9.5, -12, -10.7, -12, -19.3, -9.8, -21.5, 11.3, -21.5)
 
 [node name="FootRCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-4.04261, 33.1443)
-rotation = -0.0474151
-scale = Vector2(0.999762, 0.999762)
+position = Vector2(-4.04258, 33.1454)
+rotation = -0.0474243
+scale = Vector2(0.999767, 0.999767)
 polygon = PackedVector2Array(14.5, -10.8, 14.5, -8.8, 16.5, -6.8, 16.5, 5, 10.3, 11, -12.5, 11, -12.5, 8.4, -16, -8, -13.9, -8, -12.5, -11.4, -12.5, -13, -2.5, -13)
 
 [node name="LegLCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -1510,9 +1510,9 @@ scale = Vector2(0.999828, 0.999828)
 polygon = PackedVector2Array(13, -21, 13, 20.5, 3.2, 20.5, 1.3, 18.6, -6.6, 21.5, -9, 21.5, -9, 19.7, -17, 15.7, -17, 11.5, -18, -1, -18, -3.5, -17, -3.5, -17, -9.5, -14.5, -9.5, -12, -10.7, -12, -19.3, -9.8, -21.5, 11.3, -21.5)
 
 [node name="FootLCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(31.2841, 33.8529)
-rotation = -0.00959343
-scale = Vector2(0.999943, 0.999943)
+position = Vector2(31.283, 33.8528)
+rotation = -0.00959336
+scale = Vector2(0.999879, 0.999879)
 polygon = PackedVector2Array(14.5, -10.8, 14.5, -8.8, 16.5, -6.8, 16.5, 5, 10.3, 11, -12.5, 11, -12.5, 8.4, -16, -8, -13.9, -8, -12.5, -11.4, -12.5, -13, -2.5, -13)
 
 [node name="ArmRCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -1589,27 +1589,27 @@ scale = Vector2(0.999828, 0.999828)
 texture = ExtResource("3_jocar")
 
 [node name="FootLSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(31.2841, 33.8529)
-rotation = -0.00959343
-scale = Vector2(0.999943, 0.999943)
+position = Vector2(31.283, 33.8528)
+rotation = -0.00959336
+scale = Vector2(0.999879, 0.999879)
 texture = ExtResource("4_4sieh")
 
 [node name="LegRSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(-22.6854, -4.87128)
+position = Vector2(-22.6854, -4.871)
 rotation = 0.0163472
-scale = Vector2(0.999799, 0.999799)
+scale = Vector2(0.999817, 0.999817)
 texture = ExtResource("2_pssgg")
 
 [node name="ShinRSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(-22.1812, 25.0013)
+position = Vector2(-22.1812, 25.0022)
 rotation = -0.109397
-scale = Vector2(0.999749, 0.999749)
+scale = Vector2(0.999767, 0.999767)
 texture = ExtResource("3_juai2")
 
 [node name="FootRSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(-4.04261, 33.1443)
-rotation = -0.0474151
-scale = Vector2(0.999762, 0.999762)
+position = Vector2(-4.04258, 33.1454)
+rotation = -0.0474243
+scale = Vector2(0.999767, 0.999767)
 texture = ExtResource("4_ka4et")
 
 [node name="HipSprite2D" type="Sprite2D" parent="Sprites"]
@@ -1618,9 +1618,9 @@ scale = Vector2(0.999658, 0.999658)
 texture = ExtResource("2_ukxeu")
 
 [node name="HeadSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(2.71549, -145.966)
+position = Vector2(2.71547, -145.966)
 rotation = -0.00655735
-scale = Vector2(0.999616, 0.999616)
+scale = Vector2(0.999607, 0.999607)
 texture = ExtResource("3_0k17s")
 
 [node name="ArmRSprite2D" type="Sprite2D" parent="Sprites"]
