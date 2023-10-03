@@ -12,6 +12,7 @@ var is_dance = false
 
 signal shoot
 signal hit_detected
+signal dead
 
 func _process(delta):
 	if is_throw: $AnimationPlayer.play("Simple/Throw")
@@ -49,7 +50,7 @@ func _physics_process(delta):
 func _on_player_clown_hit():
 	health = health -1
 	if health < 0:
-		print("u dead")
+		emit_signal("dead")
 
 
 func _on_player_start_throw():

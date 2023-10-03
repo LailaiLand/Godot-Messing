@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cq0dstrdi4d45"]
+[gd_scene load_steps=10 format=3 uid="uid://cq0dstrdi4d45"]
 
 [ext_resource type="Script" path="res://crawler.gd" id="1_bwut0"]
 [ext_resource type="Texture2D" uid="uid://el1jorytajbg" path="res://Art/PNG/Crawler/CrawlerWalk1.png" id="1_gtjol"]
@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dmw6qoqke6hsi" path="res://Art/PNG/Crawler/CrawlerWalk4.png" id="4_6k7jw"]
 [ext_resource type="Texture2D" uid="uid://b0upbk258e5qv" path="res://Art/PNG/Crawler/CrawlerWalk5.png" id="5_8q1f2"]
 [ext_resource type="Texture2D" uid="uid://cpfnbuq0hpq0y" path="res://Art/PNG/Crawler/CrawlerWalk6.png" id="6_a3hky"]
-[ext_resource type="Script" path="res://CrawlerArea2D.gd" id="8_unll7"]
-[ext_resource type="Script" path="res://DetectionArea2D.gd" id="9_rjm56"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yc8gx"]
 radius = 25.0
@@ -40,13 +38,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v8ius"]
-radius = 26.0
-height = 74.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_tjuaa"]
-radius = 239.207
-
 [node name="Crawler" type="CharacterBody2D" groups=["crawler"]]
 collision_layer = 5
 collision_mask = 5
@@ -61,20 +52,3 @@ sprite_frames = SubResource("SpriteFrames_dql6h")
 animation = &"walk"
 frame = 2
 frame_progress = 0.921738
-
-[node name="CrawlerArea2D" type="Area2D" parent="."]
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("8_unll7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CrawlerArea2D"]
-shape = SubResource("CapsuleShape2D_v8ius")
-
-[node name="DetectionArea2D" type="Area2D" parent="."]
-collision_mask = 3
-script = ExtResource("9_rjm56")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
-shape = SubResource("CircleShape2D_tjuaa")
-
-[connection signal="body_entered" from="CrawlerArea2D" to="." method="OnCrawlerArea2dBodyEntered"]

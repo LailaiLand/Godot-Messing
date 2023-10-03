@@ -1,12 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://df7ovuqmk2fiq"]
+[gd_scene load_steps=6 format=3 uid="uid://df7ovuqmk2fiq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6c3av"]
 [ext_resource type="PackedScene" uid="uid://cq0dstrdi4d45" path="res://crawler.tscn" id="2_e7gkf"]
 [ext_resource type="PackedScene" uid="uid://coa7oobpvp60u" path="res://Castle.tscn" id="3_cm6ns"]
 [ext_resource type="PackedScene" uid="uid://dcr0acigufprl" path="res://player.tscn" id="5_l4v8a"]
 
+[sub_resource type="Curve2D" id="Curve2D_qy0h6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -216, -304, 0, 0, 0, 0, 104, -304, 0, 0, 0, 0, 104, 176, 0, 0, 0, 0, 800, 152, 0, 0, 0, 0, 832, -144, 0, 0, 0, 0, 1160, -152, 0, 0, 0, 0, 1152, 152, 0, 0, 0, 0, 688, 184, 0, 0, 0, 0, 688, 416, 0, 0, 0, 0, 736, 464, 0, 0, 0, 0, 1200, 488, 0, 0, 0, 0, 1192, 784, 0, 0, 0, 0, 824, 792, 0, 0, 0, 0, 840, 496, 0, 0, 0, 0, 112, 488, 0, 0, 0, 0, 112, 960, 0, 0, 0, 0, -208, 944, 0, 0, 0, 0, -216, 672, 0, 0, 0, 0, -224, 376, 0, 0, 0, 0, -728, 376, 0, 0, 0, 0, -736, 808, 0, 0, 0, 0, -1464, 800, 0, 0, 0, 0, -1456, 368, 0, 0, 0, 0, -1008, 368, 0, 0, 0, 0, -1008, 272, 0, 0, 0, 0, -1472, 264, 0, 0, 0, 0, -1472, -152, 0, 0, 0, 0, -704, -176, 0, 0, 0, 0, -728, 264, 0, 0, 0, 0, -216, 256, 0, 0, 0, 0, -216, -304)
+}
+point_count = 31
+
 [node name="Main" type="Node"]
 script = ExtResource("1_6c3av")
+crawler_scene = ExtResource("2_e7gkf")
 
 [node name="Castle" parent="." instance=ExtResource("3_cm6ns")]
 
@@ -15,4 +22,15 @@ position = Vector2(-214, -161)
 
 [node name="Player" parent="." instance=ExtResource("5_l4v8a")]
 position = Vector2(94, 104)
-scale = Vector2(0.35, 0.35)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_qy0h6")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2(-216, -304)
+
+[connection signal="player_dead" from="Player" to="." method="_on_player_player_dead"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

@@ -13,6 +13,7 @@ signal stop_dance
 signal start_throw
 signal stop_throw
 signal clown_hit
+signal player_dead
 
 func _process(_delta):
 	aim_direction = Input.get_vector("leftAim", "rightAim", "upAim", "downAim").angle()
@@ -20,6 +21,10 @@ func _process(_delta):
 	if flashing:
 		$Shooter.visible = false
 	else: $Shooter.visible = true
+	$Shooter/PlayerHealth.value = $Shooter.health
+#	if is_hit:
+#		$Shooter/PlayerHealth.visible = true
+#	else: $Shooter/PlayerHealth.visible = false
 	
 
 func _on_shooter_shoot():
@@ -51,3 +56,7 @@ func _on_flash_timer_timeout():
 		emit_signal("flash")
 	else: flashing = false
 	
+
+
+func _on_shooter_dead():
+	emit_signal("player_dead")
