@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcr0acigufprl"]
+[gd_scene load_steps=11 format=3 uid="uid://dcr0acigufprl"]
 
 [ext_resource type="PackedScene" uid="uid://dqxyx75plsbkt" path="res://shooter.tscn" id="1_byyai"]
 [ext_resource type="Script" path="res://player.gd" id="1_i7hn2"]
@@ -7,11 +7,17 @@
 [ext_resource type="Script" path="res://FlashTimer.gd" id="5_02se2"]
 [ext_resource type="Theme" uid="uid://dltpyr83ten2x" path="res://health_theme.tres" id="6_cxpfm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_whuw8"]
-size = Vector2(692, 417)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3jje"]
+bg_color = Color(0, 0, 1, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdl0m"]
-size = Vector2(575, 325)
+[sub_resource type="Theme" id="Theme_128ja"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_m3jje")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2tt3"]
+bg_color = Color(1, 1, 0, 1)
+
+[sub_resource type="Theme" id="Theme_fy3qe"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_h2tt3")
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_i7hn2")
@@ -20,8 +26,13 @@ script = ExtResource("1_i7hn2")
 scale = Vector2(0.35, 0.35)
 
 [node name="Camera2D" type="Camera2D" parent="Shooter"]
+zoom = Vector2(2, 2)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
 
 [node name="PlayerHealth" type="ProgressBar" parent="Shooter"]
 offset_left = -79.0
@@ -30,6 +41,21 @@ offset_right = 79.0
 offset_bottom = 79.0
 theme = ExtResource("6_cxpfm")
 max_value = 3.0
+value = 3.0
+
+[node name="RapidShotBar" type="ProgressBar" parent="Shooter"]
+offset_left = -79.0
+offset_top = 80.5714
+offset_right = 79.0
+offset_bottom = 107.571
+theme = SubResource("Theme_128ja")
+
+[node name="TriShotBar" type="ProgressBar" parent="Shooter"]
+offset_left = -79.0
+offset_top = 109.143
+offset_right = 79.0
+offset_bottom = 136.143
+theme = SubResource("Theme_fy3qe")
 
 [node name="ShotTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -43,19 +69,11 @@ script = ExtResource("4_yw2hs")
 wait_time = 0.1
 script = ExtResource("5_02se2")
 
-[node name="SpawnHere" type="Area2D" parent="."]
-visible = false
+[node name="RapidShotTimer" type="Timer" parent="."]
+wait_time = 0.5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnHere"]
-position = Vector2(1, -4.5)
-shape = SubResource("RectangleShape2D_whuw8")
-
-[node name="ButNotHere" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ButNotHere"]
-visible = false
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_wdl0m")
+[node name="UpgradeDecreseTimer" type="Timer" parent="."]
+wait_time = 0.5
 
 [connection signal="clown_hit" from="." to="Shooter" method="_on_player_clown_hit"]
 [connection signal="clown_hit" from="." to="HitTimer" method="_on_player_clown_hit"]

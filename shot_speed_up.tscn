@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://dp22msldnbdx"]
+
+[ext_resource type="Texture2D" uid="uid://cshsswsowiwkj" path="res://Art/PNG/SpeedUp/SpeedUp1.png" id="1_sumpw"]
+[ext_resource type="Texture2D" uid="uid://nlck4ldpcoi" path="res://Art/PNG/SpeedUp/SpeedUp2.png" id="2_wgev1"]
+[ext_resource type="Texture2D" uid="uid://dgu4v2jlnbq13" path="res://Art/PNG/SpeedUp/SpeedUp3.png" id="3_el0gl"]
+[ext_resource type="Texture2D" uid="uid://bd4tfwv46svjb" path="res://Art/PNG/SpeedUp/SpeedUp4.png" id="4_uo4ed"]
+[ext_resource type="Texture2D" uid="uid://c0gycdjtemdr4" path="res://Art/PNG/SpeedUp/SpeedUp5.png" id="5_xt38i"]
+[ext_resource type="Texture2D" uid="uid://cughp2xa6usxk" path="res://Art/PNG/SpeedUp/SpeedUp6.png" id="6_wexd2"]
+[ext_resource type="Texture2D" uid="uid://cco55kyqxtp6f" path="res://Art/PNG/SpeedUp/SpeedUp7.png" id="7_rht88"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8g3ur"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sumpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wgev1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_el0gl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uo4ed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xt38i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wexd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rht88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_el0gl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sumpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wgev1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sumpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wgev1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sumpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sumpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sumpw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xs77b"]
+radius = 8.0
+height = 24.0
+
+[node name="ShotSpeedUp" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8g3ur")
+frame_progress = 0.734748
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_xs77b")

@@ -1474,80 +1474,80 @@ scale = Vector2(0.999658, 0.999658)
 polygon = PackedVector2Array(13.8, -44, 17.4, -44, 33, -37.3, 33, -36, 43, -28, 43, -25.4, 50, -6.7, 50, 13.2, 49.7, 15, 48.1, 15, 29.1, 47, -32, 47, -32, 45, -36, 42, -36, 39.5, -46, 21.5, -46, 15, -47, -24, -45, -24, -36, -37, -33.4, -37, -2, -49, 9, -49)
 
 [node name="HeadCollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
-position = Vector2(2.71553, -145.967)
-rotation = -0.00655723
-scale = Vector2(0.999635, 0.999635)
+position = Vector2(2.71564, -145.965)
+rotation = -0.00655305
+scale = Vector2(0.9996, 0.9996)
 polygon = PackedVector2Array(20, -66, 24, -63, 24, -46, 28.5, -29, 47, -16, 47, -13, 50.6, 0, 48, 0, 46, 2.7, 46, 12.5, 49, 17.4, 49, 26.2, 47.6, 33, 46.5, 33, 44.5, 40, 43, 40, 36, 49, 33.3, 49, 21.4, 54, 5.2, 54, -8, 55.2, -8, 53.8, -18, 52.8, -18, 51.1, -34, 41.1, -34, 38.6, -41, 27.6, -41, 22, -44.2, -6, -42.3, -6, -35.3, -22, -33.8, -22, -24.8, -31, -21.1, -31, -19, -31.5, -19, -35.1, -13, -39.1, -13, -46.1, -11.9, -64, -9.8, -64, -8, -65.8, -8, -68, 20, -68)
 
 [node name="LegRCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-22.6854, -4.87138)
-rotation = 0.0163472
-scale = Vector2(0.999792, 0.999792)
+position = Vector2(-22.6854, -4.87079)
+rotation = 0.0163486
+scale = Vector2(0.999831, 0.999831)
 polygon = PackedVector2Array(11.5, -21.3, 11.5, -13.5, 13.5, 2.2, 13.5, 4.5, 12.5, 4.5, 12.5, 16.5, 10.4, 16.5, 5.4, 22.5, -5.5, 22.5, -5.5, 21.6, -12.5, 17.7, -12.5, 15.5, -13.5, 1.2, -13.5, -14.5, -12.9, -14.5, -10.5, -20.9, -10.5, -22.5, 0.5, -22.5)
 
 [node name="ShinRCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-22.1812, 25.001)
-rotation = -0.109397
-scale = Vector2(0.999742, 0.999742)
+position = Vector2(-22.1812, 25.0028)
+rotation = -0.109395
+scale = Vector2(0.999781, 0.999781)
 polygon = PackedVector2Array(13, -21, 13, 20.5, 3.2, 20.5, 1.3, 18.6, -6.6, 21.5, -9, 21.5, -9, 19.7, -17, 15.7, -17, 11.5, -18, -1, -18, -3.5, -17, -3.5, -17, -9.5, -14.5, -9.5, -12, -10.7, -12, -19.3, -9.8, -21.5, 11.3, -21.5)
 
 [node name="FootRCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-4.04305, 33.1441)
-rotation = -0.047423
-scale = Vector2(0.999741, 0.999741)
+position = Vector2(-4.04239, 33.1462)
+rotation = -0.0474245
+scale = Vector2(0.999781, 0.999781)
 polygon = PackedVector2Array(14.5, -10.8, 14.5, -8.8, 16.5, -6.8, 16.5, 5, 10.3, 11, -12.5, 11, -12.5, 8.4, -16, -8, -13.9, -8, -12.5, -11.4, -12.5, -13, -2.5, -13)
 
 [node name="LegLCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(17.1614, -4.86008)
-rotation = 0.13023
-scale = Vector2(0.999827, 0.999827)
+rotation = 0.130228
+scale = Vector2(0.999828, 0.999828)
 polygon = PackedVector2Array(11.5, -21.3, 11.5, -13.5, 13.5, 2.2, 13.5, 4.5, 12.5, 4.5, 12.5, 16.5, 10.4, 16.5, 5.4, 22.5, -5.5, 22.5, -5.5, 21.6, -12.5, 17.7, -12.5, 15.5, -13.5, 1.2, -13.5, -14.5, -12.9, -14.5, -10.5, -20.9, -10.5, -22.5, 0.5, -22.5)
 
 [node name="ShinLCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(14.3744, 24.0183)
-rotation = 0.013484
+position = Vector2(14.3746, 24.0183)
+rotation = 0.013477
 scale = Vector2(0.999828, 0.999828)
 polygon = PackedVector2Array(13, -21, 13, 20.5, 3.2, 20.5, 1.3, 18.6, -6.6, 21.5, -9, 21.5, -9, 19.7, -17, 15.7, -17, 11.5, -18, -1, -18, -3.5, -17, -3.5, -17, -9.5, -14.5, -9.5, -12, -10.7, -12, -19.3, -9.8, -21.5, 11.3, -21.5)
 
 [node name="FootLCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(31.2847, 33.853)
-rotation = -0.00959349
-scale = Vector2(0.999978, 0.999978)
+position = Vector2(31.2831, 33.8527)
+rotation = -0.00960041
+scale = Vector2(0.999868, 0.999868)
 polygon = PackedVector2Array(14.5, -10.8, 14.5, -8.8, 16.5, -6.8, 16.5, 5, 10.3, 11, -12.5, 11, -12.5, 8.4, -16, -8, -13.9, -8, -12.5, -11.4, -12.5, -13, -2.5, -13)
 
 [node name="ArmRCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-37.9604, -67.8341)
-rotation = 0.215786
+rotation = 0.21579
 scale = Vector2(0.999656, 0.999656)
 polygon = PackedVector2Array(10, -25.4, 10, -23.4, 17, -17.4, 17, -4.3, 14.4, 10.5, 17.4, 24.5, 15, 24.5, 13.5, 26.5, -6, 26.5, -6, 25.8, -10.4, 12.5, -11, 12.5, -17, 4.1, -17, 0.9, -20.4, -17.5, -18.1, -17.5, -14.1, -23.5, -11.4, -23.5, -8, -24.9, -8, -26.5, -6.5, -26.5)
 
 [node name="ForeArmRCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-37.0728, -37.5161)
-rotation = 0.414577
+position = Vector2(-37.073, -37.5161)
+rotation = 0.414582
 scale = Vector2(0.999656, 0.999656)
 polygon = PackedVector2Array(9, -12.1, 9, -9.5, 14, -0.5, 14, 6.7, 7.8, 14, -3.9, 14, -10, 8.9, -10, 5.4, -14, -5, -14, -10, -12.4, -10, -1.1, -14, 5.8, -14)
 
 [node name="HandRCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-37.5133, -19.143)
-rotation = 0.414577
+position = Vector2(-37.5136, -19.143)
+rotation = 0.414582
 scale = Vector2(0.999656, 0.999656)
 polygon = PackedVector2Array(13.5, -17.8, 16.5, -14.8, 16.5, -11.5, 16.3, -11, 22.5, -4.8, 22.5, -0.9, 21.2, 8, 19.3, 8, 8.3, 18, 3.3, 18, 2.3, 19, -6.5, 19, -6.5, 17.8, -13.5, 10.8, -13.5, 7.5, -15.8, 3, -18.2, 3, -23.5, -1.2, -23.5, -10, -22.5, -10, -18.5, -15, -14.8, -15, -2.1, -19, 13.5, -19)
 
 [node name="ArmLCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(36.1858, -71.9042)
-rotation = 0.0442405
+rotation = 0.0442355
 scale = Vector2(0.999627, 0.999627)
 polygon = PackedVector2Array(10, -25.4, 10, -23.4, 17, -17.4, 17, -4.3, 14.4, 10.5, 17.4, 24.5, 15, 24.5, 13.5, 26.5, -6, 26.5, -6, 25.8, -10.4, 12.5, -11, 12.5, -17, 4.1, -17, 0.9, -20.4, -17.5, -18.1, -17.5, -14.1, -23.5, -11.4, -23.5, -8, -24.9, -8, -26.5, -6.5, -26.5)
 
 [node name="ForeArmLCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(42.1164, -43.4418)
-rotation = 0.15886
+position = Vector2(42.1166, -43.4418)
+rotation = 0.158855
 scale = Vector2(0.999627, 0.999627)
 polygon = PackedVector2Array(9, -12.1, 9, -9.5, 14, -0.5, 14, 6.7, 7.8, 14, -3.9, 14, -10, 8.9, -10, 5.4, -14, -5, -14, -10, -12.4, -10, -1.1, -14, 5.8, -14)
 
 [node name="HandLCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(46.6537, -27.5293)
-rotation = 0.15886
+position = Vector2(46.6539, -27.5293)
+rotation = 0.158855
 scale = Vector2(0.999627, 0.999627)
 polygon = PackedVector2Array(13.5, -17.8, 16.5, -14.8, 16.5, -11.5, 16.3, -11, 22.5, -4.8, 22.5, -0.9, 21.2, 8, 19.3, 8, 8.3, 18, 3.3, 18, 2.3, 19, -6.5, 19, -6.5, 17.8, -13.5, 10.8, -13.5, 7.5, -15.8, 3, -18.2, 3, -23.5, -1.2, -23.5, -10, -22.5, -10, -18.5, -15, -14.8, -15, -2.1, -19, 13.5, -19)
 
@@ -1555,19 +1555,19 @@ polygon = PackedVector2Array(13.5, -17.8, 16.5, -14.8, 16.5, -11.5, 16.3, -11, 2
 
 [node name="ArmLSprite2D" type="Sprite2D" parent="Sprites"]
 position = Vector2(36.23, -72.9029)
-rotation = 0.0442405
+rotation = 0.0442355
 scale = Vector2(0.999627, 0.999627)
 texture = ExtResource("1_ss0gj")
 
 [node name="ForeArmLSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(42.1164, -43.4418)
-rotation = 0.15886
+position = Vector2(42.1166, -43.4418)
+rotation = 0.158855
 scale = Vector2(0.999627, 0.999627)
 texture = ExtResource("2_pb2s4")
 
 [node name="HandLSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(46.6537, -27.5293)
-rotation = 0.15886
+position = Vector2(46.6539, -27.5293)
+rotation = 0.158855
 scale = Vector2(0.999627, 0.999627)
 texture = ExtResource("3_7mced")
 
@@ -1578,38 +1578,38 @@ texture = ExtResource("1_incko")
 
 [node name="LegLSprite2D" type="Sprite2D" parent="Sprites"]
 position = Vector2(17.1614, -4.86008)
-rotation = 0.13023
-scale = Vector2(0.999827, 0.999827)
+rotation = 0.130228
+scale = Vector2(0.999828, 0.999828)
 texture = ExtResource("2_xc0e8")
 
 [node name="ShinLSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(14.3744, 24.0183)
-rotation = 0.013484
+position = Vector2(14.3746, 24.0183)
+rotation = 0.013477
 scale = Vector2(0.999828, 0.999828)
 texture = ExtResource("3_jocar")
 
 [node name="FootLSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(31.2847, 33.853)
-rotation = -0.00959349
-scale = Vector2(0.999978, 0.999978)
+position = Vector2(31.2831, 33.8527)
+rotation = -0.00960041
+scale = Vector2(0.999868, 0.999868)
 texture = ExtResource("4_4sieh")
 
 [node name="LegRSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(-22.6854, -4.87138)
-rotation = 0.0163472
-scale = Vector2(0.999792, 0.999792)
+position = Vector2(-22.6854, -4.87079)
+rotation = 0.0163486
+scale = Vector2(0.999831, 0.999831)
 texture = ExtResource("2_pssgg")
 
 [node name="ShinRSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(-22.1812, 25.001)
-rotation = -0.109397
-scale = Vector2(0.999742, 0.999742)
+position = Vector2(-22.1812, 25.0028)
+rotation = -0.109395
+scale = Vector2(0.999781, 0.999781)
 texture = ExtResource("3_juai2")
 
 [node name="FootRSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(-4.04305, 33.1441)
-rotation = -0.047423
-scale = Vector2(0.999741, 0.999741)
+position = Vector2(-4.04239, 33.1462)
+rotation = -0.0474245
+scale = Vector2(0.999781, 0.999781)
 texture = ExtResource("4_ka4et")
 
 [node name="HipSprite2D" type="Sprite2D" parent="Sprites"]
@@ -1618,26 +1618,26 @@ scale = Vector2(0.999658, 0.999658)
 texture = ExtResource("2_ukxeu")
 
 [node name="HeadSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(2.71553, -145.967)
-rotation = -0.00655723
-scale = Vector2(0.999635, 0.999635)
+position = Vector2(2.71564, -145.965)
+rotation = -0.00655305
+scale = Vector2(0.9996, 0.9996)
 texture = ExtResource("3_0k17s")
 
 [node name="ArmRSprite2D" type="Sprite2D" parent="Sprites"]
 position = Vector2(-37.5323, -69.787)
-rotation = 0.215786
+rotation = 0.21579
 scale = Vector2(0.999656, 0.999656)
 texture = ExtResource("13_35gec")
 
 [node name="ForeArmRSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(-37.0728, -37.5161)
-rotation = 0.414577
+position = Vector2(-37.073, -37.5161)
+rotation = 0.414582
 scale = Vector2(0.999656, 0.999656)
 texture = ExtResource("14_ewxcl")
 
 [node name="HandRSprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(-37.5133, -19.143)
-rotation = 0.414577
+position = Vector2(-37.5136, -19.143)
+rotation = 0.414582
 scale = Vector2(0.999656, 0.999656)
 texture = ExtResource("15_7rm1p")
 
@@ -1683,7 +1683,6 @@ position = Vector2(3.99969, -78)
 rotation = -0.00655305
 scale = Vector2(0.999942, 0.999942)
 rest = Transform2D(0.999921, -0.00655263, 0.00655263, 0.999921, 3.99969, -78)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="HeadCollisionRemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D"]
 position = Vector2(2, -43)
@@ -1706,7 +1705,6 @@ rest = Transform2D(0.903061, -0.429515, 0.429515, 0.903061, 30.3841, -56.3368)
 auto_calculate_length_and_angle = false
 length = 50.0
 bone_angle = 25.714
-metadata/_local_pose_override_enabled_ = true
 
 [node name="HairLSprite2D" type="Sprite2D" parent="Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D/HairLBone2D"]
 position = Vector2(25, 1)
@@ -1719,7 +1717,6 @@ rest = Transform2D(0.949569, 0.313565, -0.313565, 0.949569, -15.0002, -60.0009)
 auto_calculate_length_and_angle = false
 length = 60.0
 bone_angle = -205.714
-metadata/_local_pose_override_enabled_ = true
 
 [node name="HairRSprite2D" type="Sprite2D" parent="Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/HeadBone2D/HairRBone2D"]
 position = Vector2(-27, 3.00001)
@@ -1730,7 +1727,6 @@ position = Vector2(-34.3564, -55.0017)
 rotation = 0.21579
 scale = Vector2(0.999998, 0.999998)
 rest = Transform2D(0.976806, 0.214119, -0.214119, 0.976806, -34.3564, -55.0017)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="ArmRCollisionRemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmRBone2D"]
 position = Vector2(2, 12)
@@ -1744,7 +1740,6 @@ remote_path = NodePath("../../../../../../../Sprites/ArmRSprite2D")
 position = Vector2(8, 33)
 rotation = 0.198792
 rest = Transform2D(0.980306, 0.197485, -0.197485, 0.980306, 8, 33)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="ForeArmRCollisionRemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmRBone2D/ForeArmRBone2D"]
 position = Vector2(3, 8)
@@ -1772,7 +1767,6 @@ position = Vector2(37.6436, -57.0017)
 rotation = 0.0442355
 scale = Vector2(0.999969, 0.999969)
 rest = Transform2D(0.998991, 0.0442197, -0.0442197, 0.998991, 37.6436, -57.0017)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="ArmLCollisionRemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmLBone2D"]
 position = Vector2(2, 10)
@@ -1787,7 +1781,6 @@ position = Vector2(8, 31)
 rotation = 0.11462
 scale = Vector2(1, 1)
 rest = Transform2D(0.993438, 0.114369, -0.114369, 0.993438, 8, 31)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="ForeArmLCollisionRemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/PelvisBone2D/SkirtBone2D/ChestBone2D/ArmLBone2D/ForeArmLBone2D"]
 position = Vector2(2, 7)
@@ -1814,7 +1807,6 @@ remote_path = NodePath("../../../../../../../../../Sprites/HandLSprite2D")
 position = Vector2(-19, -8)
 rotation = 0.0163486
 rest = Transform2D(0.999866, 0.0163479, -0.0163479, 0.999866, -19, -8)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="LegRCollisionRemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/PelvisBone2D/LegRBone2D"]
 position = Vector2(0.558746, 15.1233)
@@ -1828,7 +1820,6 @@ position = Vector2(1, 29)
 rotation = -0.0344692
 scale = Vector2(0.99995, 0.99995)
 rest = Transform2D(0.999356, -0.0344606, 0.0344606, 0.999356, 1, 29)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="ShinRCollisionRemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/PelvisBone2D/LegRBone2D/ShinRBone2D"]
 position = Vector2(0, 16)
@@ -1845,7 +1836,6 @@ rest = Transform2D(0.999571, -0.0292997, 0.0292997, 0.999571, 0, 25)
 auto_calculate_length_and_angle = false
 length = 30.408
 bone_angle = 0.0
-metadata/_local_pose_override_enabled_ = true
 
 [node name="FootRCollisionRemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/PelvisBone2D/LegRBone2D/ShinRBone2D/FootRBone2D"]
 position = Vector2(18, 0)
@@ -1862,7 +1852,6 @@ position = Vector2(21, -7)
 rotation = 0.130228
 scale = Vector2(0.999997, 0.999997)
 rest = Transform2D(0.991529, 0.12986, -0.12986, 0.991529, 21, -7)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="LegLCollisionRemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/PelvisBone2D/LegLBone2D"]
 position = Vector2(2, 14)
@@ -1875,7 +1864,6 @@ remote_path = NodePath("../../../../../Sprites/LegLSprite2D")
 position = Vector2(2, 26)
 rotation = -0.116751
 rest = Transform2D(0.993192, -0.116486, 0.116486, 0.993192, 2, 26)
-metadata/_local_pose_override_enabled_ = true
 
 [node name="ShinLCollisionRemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/PelvisBone2D/LegLBone2D/ShinLBone2D"]
 position = Vector2(-1, 17)
@@ -1892,7 +1880,6 @@ rest = Transform2D(0.999776, -0.0230763, 0.0230763, 0.999776, -0.999887, 25)
 auto_calculate_length_and_angle = false
 length = 30.408
 bone_angle = 0.0
-metadata/_local_pose_override_enabled_ = true
 
 [node name="FootLCollisionRemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/PelvisBone2D/LegLBone2D/ShinLBone2D/FootLBone2D"]
 position = Vector2(17, 2)

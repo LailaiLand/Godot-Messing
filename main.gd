@@ -1,6 +1,7 @@
 extends Node
 
 @export var crawler_scene: PackedScene
+@export var heart_scene: PackedScene
 
 func _ready():
 	new_game()
@@ -30,4 +31,8 @@ func _on_mob_timer_timeout():
 	
 	add_child(crawler)
 	
-
+func _on_pie_heart_spawn(args):
+	var pos = args
+	var heart = heart_scene.instantiate()
+	heart.position = pos
+	call_deferred("add_child", heart)

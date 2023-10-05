@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv8ogkucld4p1"]
+
+[ext_resource type="Texture2D" uid="uid://dce7epmwpjm3x" path="res://Art/PNG/Timesthree/Times3Bright.png" id="1_jji38"]
+[ext_resource type="Texture2D" uid="uid://drphh16jafo8x" path="res://Art/PNG/Timesthree/Times3Normal.png" id="2_7da1m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mkjac"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jji38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7da1m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7sfk"]
+size = Vector2(26, 26)
+
+[node name="Times3" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mkjac")
+frame_progress = 0.947954
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r7sfk")

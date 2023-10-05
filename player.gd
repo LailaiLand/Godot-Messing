@@ -22,6 +22,8 @@ func _process(_delta):
 		$Shooter.visible = false
 	else: $Shooter.visible = true
 	$Shooter/PlayerHealth.value = $Shooter.health
+	if $Shooter.health >= $Shooter/PlayerHealth.max_value:
+		$Shooter/PlayerHealth.max_value = $Shooter.health
 #	if is_hit:
 #		$Shooter/PlayerHealth.visible = true
 #	else: $Shooter/PlayerHealth.visible = false

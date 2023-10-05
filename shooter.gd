@@ -59,3 +59,6 @@ func _on_player_start_throw():
 
 func _on_player_stop_throw():
 	is_throw = false
+
+func _on_heart_health_up():
+	health = health +1
