@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dp22msldnbdx"]
+[gd_scene load_steps=11 format=3 uid="uid://dp22msldnbdx"]
 
+[ext_resource type="Script" path="res://shot_speed_up.gd" id="1_3wg75"]
 [ext_resource type="Texture2D" uid="uid://cshsswsowiwkj" path="res://Art/PNG/SpeedUp/SpeedUp1.png" id="1_sumpw"]
 [ext_resource type="Texture2D" uid="uid://nlck4ldpcoi" path="res://Art/PNG/SpeedUp/SpeedUp2.png" id="2_wgev1"]
 [ext_resource type="Texture2D" uid="uid://dgu4v2jlnbq13" path="res://Art/PNG/SpeedUp/SpeedUp3.png" id="3_el0gl"]
@@ -66,11 +67,17 @@ radius = 8.0
 height = 24.0
 
 [node name="ShotSpeedUp" type="Area2D"]
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("1_3wg75")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8g3ur")
-frame_progress = 0.734748
+frame_progress = 0.0830092
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_xs77b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

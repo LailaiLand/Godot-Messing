@@ -2,6 +2,8 @@ extends Node
 
 @export var crawler_scene: PackedScene
 @export var heart_scene: PackedScene
+@export var shot_speed_up_scene: PackedScene
+@export var times_3_scene: PackedScene
 
 func _ready():
 	new_game()
@@ -36,3 +38,15 @@ func _on_pie_heart_spawn(args):
 	var heart = heart_scene.instantiate()
 	heart.position = pos
 	call_deferred("add_child", heart)
+	
+func _on_pie_speed_spawn(args):
+	var pos = args
+	var speed = shot_speed_up_scene.instantiate()
+	speed.position = pos
+	call_deferred("add_child", speed)
+
+func _on_pie_tri_spawn(args):
+	var pos = args
+	var tri = times_3_scene.instantiate()
+	tri.position = pos
+	call_deferred("add_child", tri)

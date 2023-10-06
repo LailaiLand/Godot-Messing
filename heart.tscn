@@ -56,7 +56,7 @@ script = ExtResource("1_gaobe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_flxhj")
-frame_progress = 0.128091
+frame_progress = 0.192503
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

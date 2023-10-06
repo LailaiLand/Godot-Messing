@@ -13,6 +13,8 @@ var is_dance = false
 signal shoot
 signal hit_detected
 signal dead
+signal shot_speed
+signal tri_shot
 
 func _process(delta):
 	if is_throw: $AnimationPlayer.play("Simple/Throw")
@@ -62,3 +64,9 @@ func _on_player_stop_throw():
 
 func _on_heart_health_up():
 	health = health +1
+
+func _on_shot_speed_up_shot_speed_up():
+	emit_signal("shot_speed")
+
+func _on_times_3_trishot():
+	emit_signal("tri_shot")
