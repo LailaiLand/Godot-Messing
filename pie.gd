@@ -32,7 +32,7 @@ func _on_body_entered(body):
 
 func _random_heart_spawn():
 	var random_num = randf_range(0, 1)
-	if random_num <= 0.3:
+	if random_num <= 0.1:
 		_random_item()
 
 func _random_item():
