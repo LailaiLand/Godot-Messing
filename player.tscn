@@ -27,15 +27,6 @@ script = ExtResource("1_i7hn2")
 [node name="Shooter" parent="." instance=ExtResource("1_byyai")]
 scale = Vector2(0.35, 0.35)
 
-[node name="Camera2D" type="Camera2D" parent="Shooter"]
-zoom = Vector2(1.5, 1.5)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
-
 [node name="PlayerHealth" type="ProgressBar" parent="Shooter"]
 offset_left = -79.0
 offset_top = 52.0
@@ -58,6 +49,16 @@ offset_top = 109.143
 offset_right = 79.0
 offset_bottom = 136.143
 theme = SubResource("Theme_fy3qe")
+
+[node name="Camera2D" type="Camera2D" parent="Shooter"]
+scale = Vector2(1, 1)
+zoom = Vector2(1.5, 1.5)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
 
 [node name="ShotTimer" type="Timer" parent="."]
 wait_time = 0.5

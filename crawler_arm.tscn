@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkmf8hg0ybwlf"]
+
+[ext_resource type="Script" path="res://crawler_leg.gd" id="1_27t74"]
+[ext_resource type="Texture2D" uid="uid://h1kr6nqooqir" path="res://Art/PNG/Crawler/CrawlerArm.png" id="1_mppb5"]
+
+[node name="CrawlerArm" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 7
+mass = 0.1
+gravity_scale = 0.0
+script = ExtResource("1_27t74")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_mppb5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(14, 14, -14, 14, 0, -14)
+
+[node name="CrawlerPartFlashTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="CrawlerPartDeleteTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="CrawlerPartFlashTimer" to="." method="_on_crawler_part_flash_timer_timeout"]
+[connection signal="timeout" from="CrawlerPartDeleteTimer" to="." method="_on_crawler_part_delete_timer_timeout"]

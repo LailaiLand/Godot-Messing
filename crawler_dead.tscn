@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn0edme3snjx5"]
+
+[ext_resource type="Script" path="res://crawler_dead.gd" id="1_f34mo"]
+[ext_resource type="PackedScene" uid="uid://bdgquopc5uecd" path="res://crawler_body.tscn" id="1_kd4r7"]
+[ext_resource type="PackedScene" uid="uid://d3nc22a2l80ud" path="res://crawler_head.tscn" id="2_3yir4"]
+[ext_resource type="PackedScene" uid="uid://dkmf8hg0ybwlf" path="res://crawler_arm.tscn" id="3_r604g"]
+[ext_resource type="PackedScene" uid="uid://i8drfpmi7p2d" path="res://crawler_leg.tscn" id="4_nl203"]
+
+[node name="CrawlerDead" type="Node2D"]
+modulate = Color(1, 0.176471, 0.105882, 1)
+script = ExtResource("1_f34mo")
+
+[node name="CrawlerBody" parent="." instance=ExtResource("1_kd4r7")]
+
+[node name="CrawlerHead" parent="." instance=ExtResource("2_3yir4")]
+position = Vector2(10, -30)
+
+[node name="CrawlerArm" parent="." instance=ExtResource("3_r604g")]
+position = Vector2(-18, -16)
+
+[node name="CrawlerArm2" parent="." instance=ExtResource("3_r604g")]
+position = Vector2(22, -16)
+
+[node name="CrawlerLeg" parent="." instance=ExtResource("4_nl203")]
+position = Vector2(-24, 30)
+
+[node name="CrawlerLeg2" parent="." instance=ExtResource("4_nl203")]
+position = Vector2(-8, 30)
+
+[node name="CrawlerLeg3" parent="." instance=ExtResource("4_nl203")]
+position = Vector2(8, 30)
+
+[node name="CrawlerLeg4" parent="." instance=ExtResource("4_nl203")]
+position = Vector2(24, 30)
+
+[node name="DeadCrawlerDeleteTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="DeadCrawlerDeleteTimer" to="." method="_on_dead_crawler_delete_timer_timeout"]

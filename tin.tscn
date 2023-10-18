@@ -10,7 +10,6 @@ collision_mask = 7
 mass = 0.01
 gravity_scale = 0.0
 max_contacts_reported = 3
-contact_monitor = true
 script = ExtResource("1_rlkn8")
 
 [node name="TinSprite" type="Sprite2D" parent="."]

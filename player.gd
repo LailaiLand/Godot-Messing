@@ -29,28 +29,22 @@ func _process(_delta):
 	else: $Shooter.visible = true
 	$Shooter/PlayerHealth.value = $Shooter.health
 	if $Shooter.health >= $Shooter/PlayerHealth.max_value:
-		$Shooter/PlayerHealth.max_value = $Shooter.health
+		$Shooter.health = $Shooter/PlayerHealth.max_value
 	$Shooter/RapidShotBar.value = rapid_upgrade
 	if rapid_upgrade <= 0:
 		rapid_shot = false
 	$Shooter/TriShotBar.value = tri_upgrade
 	if tri_upgrade <= 0:
 		tri_shot = false
-#	if is_hit:
-#		$Shooter/PlayerHealth.visible = true
-#	else: $Shooter/PlayerHealth.visible = false
-	
 
 func _on_shooter_shoot():
 	if !cooldown:
-		#TODO: add logic to spawn 2 aditional projectiles if tri_shot is active
 		owner.add_child(_generate_pie())
 		if tri_shot:
 			owner.add_child(_generate_pie())
 			owner.add_child(_generate_pie())
 		cooldown = true
 		emit_signal("start_throw")
-		#TODO: send rapid_shot signal instead and implement RapidShotTimer
 		if !rapid_shot:
 			emit_signal("shot_fired")
 		else: emit_signal("rapid_shot_fired")
