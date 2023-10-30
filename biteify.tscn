@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbi031acqynei"]
+
+[ext_resource type="Script" path="res://Biteify.gd" id="1_rgk58"]
+[ext_resource type="Texture2D" uid="uid://do1bakwqinl4e" path="res://Art/PNG/Biteify/Untitled.png" id="2_amfye"]
+[ext_resource type="Texture2D" uid="uid://dnjebrqus5n12" path="res://Art/PNG/Biteify/Radience1.png" id="2_qqn30"]
+[ext_resource type="Texture2D" uid="uid://ca8ke3vhquc5w" path="res://Art/PNG/Biteify/Radience2.png" id="3_80uan"]
+[ext_resource type="Texture2D" uid="uid://7yb45wpvugw2" path="res://Art/PNG/Biteify/Radience3.png" id="4_2trmn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ikuq7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qqn30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_80uan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2trmn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Biteify" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 65
+collision_mask = 65
+script = ExtResource("1_rgk58")
+
+[node name="Radience" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -6)
+sprite_frames = SubResource("SpriteFrames_ikuq7")
+frame_progress = 0.86767
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(17.5, -28.9, 17.5, -27.4, 29.5, -14.3, 29.5, -10.9, 31.5, -0.1, 31.5, 7.5, 30.8, 7.5, 25.8, 19.5, 24.2, 19.5, 11.4, 30.5, -9.7, 30.5, -17.5, 27.9, -17.5, 26.4, -29.5, 13.3, -29.5, 9.5, -31.5, -7.8, -31.5, -9.5, -29.9, -9.5, -25.9, -20.5, -24.4, -20.5, -16.4, -29.5, -14, -29.5, -12.1, -30.5, 12.7, -30.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_amfye")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

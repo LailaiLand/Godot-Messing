@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://cfayq4thiirsh"]
+[gd_scene load_steps=27 format=3 uid="uid://cfayq4thiirsh"]
 
 [ext_resource type="Texture2D" uid="uid://dl4h5744ie750" path="res://Art/PNG/Biter/BiterStand1.png" id="1_vg8hr"]
+[ext_resource type="Script" path="res://biter.gd" id="1_xr2gg"]
 [ext_resource type="Texture2D" uid="uid://7wbjuw72u7us" path="res://Art/PNG/Biter/BiterEat1.png" id="2_ijc06"]
 [ext_resource type="Texture2D" uid="uid://1xnpdy5acesp" path="res://Art/PNG/Biter/BiterStand2.png" id="2_uh67s"]
 [ext_resource type="Texture2D" uid="uid://gj7nyi2m0od4" path="res://Art/PNG/Biter/BiterEat2.png" id="3_edsdc"]
@@ -68,7 +69,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"bite",
-"speed": 18.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -106,7 +107,13 @@ animations = [{
 "speed": 18.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1o71t"]
+radius = 255.071
+
 [node name="Biter" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_xr2gg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_as_relative = false
@@ -115,4 +122,14 @@ shape = SubResource("CapsuleShape2D_32wm2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_omc80")
-animation = &"stand"
+animation = &"bite"
+
+[node name="CaseZone" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaseZone"]
+shape = SubResource("CircleShape2D_1o71t")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="CaseZone" to="." method="_on_case_zone_body_entered"]

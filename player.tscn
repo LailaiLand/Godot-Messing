@@ -51,7 +51,6 @@ offset_bottom = 136.143
 theme = SubResource("Theme_fy3qe")
 
 [node name="Camera2D" type="Camera2D" parent="Shooter"]
-scale = Vector2(1, 1)
 zoom = Vector2(1.5, 1.5)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

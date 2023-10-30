@@ -22,20 +22,21 @@ signal clown_hit
 signal player_dead
 
 func _process(_delta):
-	aim_direction = Input.get_vector("leftAim", "rightAim", "upAim", "downAim").angle()
-	$Shooter/AimingMarkers/Origin.rotation = aim_direction
-	if flashing:
-		$Shooter.visible = false
-	else: $Shooter.visible = true
-	$Shooter/PlayerHealth.value = $Shooter.health
-	if $Shooter.health >= $Shooter/PlayerHealth.max_value:
-		$Shooter.health = $Shooter/PlayerHealth.max_value
-	$Shooter/RapidShotBar.value = rapid_upgrade
-	if rapid_upgrade <= 0:
-		rapid_shot = false
-	$Shooter/TriShotBar.value = tri_upgrade
-	if tri_upgrade <= 0:
-		tri_shot = false
+	if self.get_child(0).name == "Shooter":
+		aim_direction = Input.get_vector("leftAim", "rightAim", "upAim", "downAim").angle()
+		$Shooter/AimingMarkers/Origin.rotation = aim_direction
+		if flashing:
+			$Shooter.visible = false
+		else: $Shooter.visible = true
+		$Shooter/PlayerHealth.value = $Shooter.health
+		if $Shooter.health >= $Shooter/PlayerHealth.max_value:
+			$Shooter.health = $Shooter/PlayerHealth.max_value
+		$Shooter/RapidShotBar.value = rapid_upgrade
+		if rapid_upgrade <= 0:
+			rapid_shot = false
+		$Shooter/TriShotBar.value = tri_upgrade
+		if tri_upgrade <= 0:
+			tri_shot = false
 
 func _on_shooter_shoot():
 	if !cooldown:

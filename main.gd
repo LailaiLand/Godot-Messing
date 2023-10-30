@@ -5,6 +5,8 @@ extends Node
 @export var shot_speed_up_scene: PackedScene
 @export var times_3_scene: PackedScene
 @export var dead_crawler_scene: PackedScene
+@export var poop_scene: PackedScene
+@export var biter_scene: PackedScene
 var stage
 var character
 
@@ -12,6 +14,9 @@ func _ready():
 	new_game()
 
 func game_over():
+	var mob_group = get_tree().get_nodes_in_group("crawler")
+	for mob in mob_group:
+		mob.queue_free()
 	$MobTimer.stop()
 
 func new_game():
@@ -62,3 +67,15 @@ func _on_pie_dead_crawler(args):
 	var dedcra = dead_crawler_scene.instantiate()
 	dedcra.position = pos
 	call_deferred("add_child", dedcra)
+
+func _on_Biter_spawn_poop(args):
+	var pos = args
+	var poop = poop_scene.instantiate()
+	poop.position = pos
+	call_deferred("add_child", poop)
+
+func _on_Biteify_spawn_biter(args):
+	var pos = args
+	var biter = biter_scene.instantiate()
+	biter.position = pos
+	call_deferred("add_child", biter)

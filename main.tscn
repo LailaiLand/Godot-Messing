@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://df7ovuqmk2fiq"]
+[gd_scene load_steps=11 format=3 uid="uid://df7ovuqmk2fiq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6c3av"]
 [ext_resource type="PackedScene" uid="uid://cq0dstrdi4d45" path="res://crawler.tscn" id="2_e7gkf"]
 [ext_resource type="PackedScene" uid="uid://h8t5cdjyg4nh" path="res://heart.tscn" id="3_btbo6"]
-[ext_resource type="PackedScene" uid="uid://coa7oobpvp60u" path="res://Castle.tscn" id="3_cm6ns"]
 [ext_resource type="PackedScene" uid="uid://dp22msldnbdx" path="res://shot_speed_up.tscn" id="4_64sjt"]
 [ext_resource type="PackedScene" uid="uid://bv8ogkucld4p1" path="res://times_3.tscn" id="5_4541c"]
 [ext_resource type="PackedScene" uid="uid://dcr0acigufprl" path="res://player.tscn" id="5_l4v8a"]
 [ext_resource type="PackedScene" uid="uid://dn0edme3snjx5" path="res://crawler_dead.tscn" id="6_hb4il"]
+[ext_resource type="PackedScene" uid="uid://coa7oobpvp60u" path="res://Castle.tscn" id="7_2mohx"]
+[ext_resource type="PackedScene" uid="uid://cqid4o8cgcpdv" path="res://poop.tscn" id="7_afqsu"]
+[ext_resource type="PackedScene" uid="uid://cfayq4thiirsh" path="res://biter.tscn" id="8_h4qhv"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_6c3av")
@@ -16,16 +18,17 @@ heart_scene = ExtResource("3_btbo6")
 shot_speed_up_scene = ExtResource("4_64sjt")
 times_3_scene = ExtResource("5_4541c")
 dead_crawler_scene = ExtResource("6_hb4il")
+poop_scene = ExtResource("7_afqsu")
+biter_scene = ExtResource("8_h4qhv")
 
 [node name="MapNode" type="Node2D" parent="."]
 
-[node name="Castle" parent="MapNode" instance=ExtResource("3_cm6ns")]
+[node name="Castle" parent="MapNode" instance=ExtResource("7_2mohx")]
 
 [node name="Player" parent="." instance=ExtResource("5_l4v8a")]
-position = Vector2(100, 100)
 
 [node name="MobTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 1.571
 
 [connection signal="player_dead" from="Player" to="." method="_on_player_player_dead"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
