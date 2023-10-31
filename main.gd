@@ -9,17 +9,22 @@ extends Node
 @export var biter_scene: PackedScene
 var stage
 var character
+var biter = null
 
 func _ready():
 	new_game()
 
 func game_over():
+	if biter:
+		biter._clear_stack()
 	var mob_group = get_tree().get_nodes_in_group("crawler")
 	for mob in mob_group:
 		mob.queue_free()
 	$MobTimer.stop()
 
 func new_game():
+	if biter:
+		biter._enable_stack()
 	character = $Player.get_child(0)
 	character.position = Vector2(100, 100)
 	character.health = 3
@@ -76,6 +81,7 @@ func _on_Biter_spawn_poop(args):
 
 func _on_Biteify_spawn_biter(args):
 	var pos = args
-	var biter = biter_scene.instantiate()
-	biter.position = pos
-	call_deferred("add_child", biter)
+	var biter_instance = biter_scene.instantiate()
+	biter_instance.position = pos
+	call_deferred("add_child", biter_instance)
+	biter = get_node("Biter")

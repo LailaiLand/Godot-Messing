@@ -39,8 +39,8 @@ animations = [{
 }]
 
 [node name="Crawler" type="CharacterBody2D" groups=["crawler"]]
-collision_layer = 13
-collision_mask = 5
+collision_layer = 29
+collision_mask = 21
 script = ExtResource("1_bwut0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

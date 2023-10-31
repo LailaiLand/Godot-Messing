@@ -7,6 +7,7 @@ var shooter
 var speed = 200
 var flip = false
 var is_eating = false
+var can_has_enemy = true
 
 signal spawn_poop
 
@@ -44,19 +45,20 @@ func _physics_process(delta):
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		if collision.get_collider().is_in_group("crawler"):
+		if collision.get_collider().is_in_group("crawler") and !is_eating:
 			_eat(collision.get_collider())
 
 func sort_closest(a, b):
 	return a.position.distance_to(position) < b.position.distance_to(position)
 
 func _on_case_zone_body_entered(body):
-	if body.is_in_group("crawler"):
+	if body.is_in_group("crawler") and can_has_enemy:
 		enemy_stack.push_back(body)
 
 func _eat(object):
 	$AnimatedSprite2D.play("bite")
 	is_eating = true
+	enemy_stack.erase(object)
 	object.queue_free()
 
 func _on_animated_sprite_2d_animation_finished():
@@ -64,3 +66,10 @@ func _on_animated_sprite_2d_animation_finished():
 		$AnimatedSprite2D.play("stand")
 		is_eating = false
 		emit_signal("spawn_poop", position)
+
+func _clear_stack():
+	enemy_stack.clear()
+	can_has_enemy = false
+
+func _enable_stack():
+	can_has_enemy = true

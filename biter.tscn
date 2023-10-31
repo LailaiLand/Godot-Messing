@@ -111,8 +111,8 @@ animations = [{
 radius = 255.071
 
 [node name="Biter" type="CharacterBody2D"]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 16
+collision_mask = 16
 script = ExtResource("1_xr2gg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
