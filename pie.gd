@@ -27,14 +27,12 @@ func _physics_process(delta):
 	
 
 func _on_body_entered(body):
-	#TODO: Add func in biter to clear crawler and call it there
 	if body.is_in_group("crawler"):
-		if biter:
-			if biter.enemy_stack.has(body):
-				biter.enemy_stack.erase(body)
 		_random_heart_spawn()
 		emit_signal("dead_crawler", body.position)
-		body.queue_free()
+		if biter:
+			biter.enemy_stack.erase(body)
+		get_parent().remove_child(body)
 		
 	var splotion_instance = splotion.instantiate()
 	get_tree().root.add_child(splotion_instance)

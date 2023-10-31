@@ -19,12 +19,10 @@ func game_over():
 		biter._clear_stack()
 	var mob_group = get_tree().get_nodes_in_group("crawler")
 	for mob in mob_group:
-		mob.queue_free()
+		remove_child(mob)
 	$MobTimer.stop()
 
 func new_game():
-	if biter:
-		biter._enable_stack()
 	character = $Player.get_child(0)
 	character.position = Vector2(100, 100)
 	character.health = 3

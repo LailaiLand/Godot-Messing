@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var player
 var player_position
-
 var speed = 150
 
 func _ready():
@@ -11,8 +10,6 @@ func _ready():
 
 func _physics_process(delta):
 	player_position = player.position
-	
 	velocity = position.direction_to(player_position) * speed
-	
 	
 	move_and_slide()
