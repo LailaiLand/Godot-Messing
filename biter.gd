@@ -63,6 +63,7 @@ func _eat(food):
 	eating = true
 	$AnimatedSprite2D.play("bite")
 	enemy_stack.erase(food)
+	#TODO call remove_child with signal
 	get_parent().remove_child(food)
 
 func _clear_stack():
