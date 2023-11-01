@@ -9,12 +9,14 @@ var flip = false
 var eating = false
 
 signal spawn_poop
+signal delete_crawler
 
 func _ready():
 	shooter = get_parent().get_child(1).get_child(0)
 	$AnimatedSprite2D.play("stand")
 	var main_scene = get_parent()
 	connect("spawn_poop", main_scene._on_Biter_spawn_poop)
+	connect("delete_crawler", main_scene._on_child_delete_crawler)
 
 func _process(_delta):
 	if flip:
@@ -46,11 +48,11 @@ func _physics_process(_delta):
 	if !eating:
 		move_and_slide()
 
-	
 	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i).get_collider()
-		if collision.is_in_group("crawler"):
-			_eat(collision)
+		var collision = get_slide_collision(i)
+		if collision.get_collider().is_in_group("crawler"):
+			_eat(collision.get_collider())
+
 
 func sort_closest(a, b):
 		return a.position.distance_to(position) < b.position.distance_to(position)
@@ -62,9 +64,7 @@ func _on_case_zone_body_entered(body):
 func _eat(food):
 	eating = true
 	$AnimatedSprite2D.play("bite")
-	enemy_stack.erase(food)
-	#TODO call remove_child with signal
-	get_parent().remove_child(food)
+	emit_signal("delete_crawler", food, false)
 
 func _clear_stack():
 	enemy_stack.clear()

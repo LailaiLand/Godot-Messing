@@ -15,10 +15,9 @@ func _ready():
 	new_game()
 
 func game_over():
-	if biter:
-		biter._clear_stack()
 	var mob_group = get_tree().get_nodes_in_group("crawler")
 	for mob in mob_group:
+		_check_biter_stack(mob)
 		remove_child(mob)
 	$MobTimer.stop()
 
@@ -81,5 +80,20 @@ func _on_Biteify_spawn_biter(args):
 	var pos = args
 	var biter_instance = biter_scene.instantiate()
 	biter_instance.position = pos
+	biter = biter_instance
 	call_deferred("add_child", biter_instance)
-	biter = get_node("Biter")
+	print(biter.name)
+
+func _on_child_delete_crawler(childNode, is_pie):
+	if !_check_biter_stack(childNode) and !is_pie:
+		return
+	remove_child(childNode)
+
+func _check_biter_stack(crawler):
+	if biter == null:
+		return false
+	var biter_stack = biter.enemy_stack
+	if !biter_stack.has(crawler):
+		return false
+	biter_stack.erase(crawler)
+	return true
