@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3av0bgtmynuh"]
+[gd_scene load_steps=7 format=3 uid="uid://b3av0bgtmynuh"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_ek06q"]
+[ext_resource type="Texture2D" uid="uid://b4jy4m5dh17sg" path="res://Art/PNG/Shooter/ShooterHeadFront.png" id="2_ukkjq"]
+[ext_resource type="Texture2D" uid="uid://bg2qm0kburfha" path="res://Art/PNG/Shooter/HairL.png" id="3_hiapk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nlm7t"]
-font_size = 49
+font_size = 40
 font_color = Color(1, 0.666667, 0.733333, 1)
 outline_size = 6
 outline_color = Color(0.666667, 1, 0.933333, 1)
@@ -10,22 +14,101 @@ outline_color = Color(0.666667, 1, 0.933333, 1)
 default_font_size = 30
 Button/font_sizes/font_size = 30
 
-[node name="PauseMenu" type="CanvasLayer"]
+[sub_resource type="LabelSettings" id="LabelSettings_jlvds"]
+font_size = 30
 
-[node name="Message" type="Label" parent="."]
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_ek06q")
+
+[node name="MessageLabel" type="Label" parent="."]
 offset_left = 128.0
-offset_top = 120.0
-offset_right = 377.0
-offset_bottom = 191.0
+offset_top = 128.0
+offset_right = 448.0
+offset_bottom = 192.0
 text = "New game"
 label_settings = SubResource("LabelSettings_nlm7t")
 horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="SelectLabel" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 384.0
+offset_right = 448.0
+offset_bottom = 442.0
+text = "Select Level"
+label_settings = SubResource("LabelSettings_nlm7t")
+horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="."]
 offset_left = 128.0
 offset_top = 256.0
-offset_right = 384.0
+offset_right = 448.0
 offset_bottom = 320.0
 theme = SubResource("Theme_ho63l")
 text = "Start"
+
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 1088.0
+offset_right = 1152.0
+offset_bottom = 64.0
+theme = SubResource("Theme_ho63l")
+text = "X"
+
+[node name="PreviousButton" type="Button" parent="."]
+offset_left = 128.0
+offset_top = 448.0
+offset_right = 192.0
+offset_bottom = 512.0
+theme = SubResource("Theme_ho63l")
+text = "<"
+
+[node name="NextButton" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 448.0
+offset_right = 448.0
+offset_bottom = 512.0
+theme = SubResource("Theme_ho63l")
+text = ">"
+
+[node name="LevelLabel" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 448.0
+offset_right = 320.0
+offset_bottom = 512.0
+text = "1"
+label_settings = SubResource("LabelSettings_jlvds")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShooterHead" type="Node2D" parent="."]
+position = Vector2(480, 288)
+scale = Vector2(0.5, 0.5)
+
+[node name="Face" type="Sprite2D" parent="ShooterHead"]
+position = Vector2(-3, -11)
+texture = ExtResource("2_ukkjq")
+
+[node name="LeftTail" type="Sprite2D" parent="ShooterHead"]
+position = Vector2(53, -27)
+texture = ExtResource("3_hiapk")
+
+[node name="RightTail" type="Sprite2D" parent="ShooterHead"]
+position = Vector2(-51, -27)
+scale = Vector2(-1, 1)
+texture = ExtResource("3_hiapk")
+
+[node name="StartMarker" type="Marker2D" parent="."]
+position = Vector2(480, 288)
+
+[node name="PreviousMarker" type="Marker2D" parent="."]
+position = Vector2(96, 480)
+
+[node name="NextMarker" type="Marker2D" parent="."]
+position = Vector2(480, 480)
+
+[node name="CloseMarker" type="Marker2D" parent="."]
+position = Vector2(1056, 32)
+
+[connection signal="mouse_entered" from="StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_entered" from="CloseButton" to="." method="_on_close_button_mouse_entered"]
+[connection signal="mouse_entered" from="PreviousButton" to="." method="_on_previous_button_mouse_entered"]
+[connection signal="mouse_entered" from="NextButton" to="." method="_on_next_button_mouse_entered"]

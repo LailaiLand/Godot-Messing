@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cfayq4thiirsh" path="res://biter.tscn" id="8_h4qhv"]
 
 [node name="Main" type="Node"]
+process_mode = 1
 script = ExtResource("1_6c3av")
 crawler_scene = ExtResource("2_e7gkf")
 heart_scene = ExtResource("3_btbo6")
