@@ -7,11 +7,17 @@ extends Node
 @export var dead_crawler_scene: PackedScene
 @export var poop_scene: PackedScene
 @export var biter_scene: PackedScene
+
+@export var castle_scene: PackedScene
+
 var stage
 var character
 var biter = null
+var maps = []
+var map_index = 0
 
 func _ready():
+	maps.push_back(castle_scene)
 	new_game()
 
 func game_over():
@@ -25,7 +31,8 @@ func new_game():
 	character = $Player.get_child(0)
 	character.position = Vector2(100, 100)
 	character.health = 3
-	stage = $MapNode.get_child(0)
+	stage = maps[map_index].instantiate()
+	$MapNode.add_child(stage)
 	$MobTimer.start()
 
 

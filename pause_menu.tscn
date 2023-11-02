@@ -1,3 +1,31 @@
-[gd_scene format=3 uid="uid://b3av0bgtmynuh"]
+[gd_scene load_steps=3 format=3 uid="uid://b3av0bgtmynuh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nlm7t"]
+font_size = 49
+font_color = Color(1, 0.666667, 0.733333, 1)
+outline_size = 6
+outline_color = Color(0.666667, 1, 0.933333, 1)
+
+[sub_resource type="Theme" id="Theme_ho63l"]
+default_font_size = 30
+Button/font_sizes/font_size = 30
 
 [node name="PauseMenu" type="CanvasLayer"]
+
+[node name="Message" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 120.0
+offset_right = 377.0
+offset_bottom = 191.0
+text = "New game"
+label_settings = SubResource("LabelSettings_nlm7t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 128.0
+offset_top = 256.0
+offset_right = 384.0
+offset_bottom = 320.0
+theme = SubResource("Theme_ho63l")
+text = "Start"

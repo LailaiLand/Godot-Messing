@@ -20,10 +20,9 @@ times_3_scene = ExtResource("5_4541c")
 dead_crawler_scene = ExtResource("6_hb4il")
 poop_scene = ExtResource("7_afqsu")
 biter_scene = ExtResource("8_h4qhv")
+castle_scene = ExtResource("7_2mohx")
 
 [node name="MapNode" type="Node2D" parent="."]
-
-[node name="Castle" parent="MapNode" instance=ExtResource("7_2mohx")]
 
 [node name="Player" parent="." instance=ExtResource("5_l4v8a")]
 

@@ -7,6 +7,7 @@ var shooter
 var speed = 200
 var flip = false
 var eating = false
+var main_scene
 
 signal spawn_poop
 signal delete_crawler
@@ -14,7 +15,7 @@ signal delete_crawler
 func _ready():
 	shooter = get_parent().get_child(1).get_child(0)
 	$AnimatedSprite2D.play("stand")
-	var main_scene = get_parent()
+	main_scene = get_parent()
 	connect("spawn_poop", main_scene._on_Biter_spawn_poop)
 	connect("delete_crawler", main_scene._on_child_delete_crawler)
 
@@ -32,6 +33,7 @@ func _process(_delta):
 		
 
 func _physics_process(_delta):
+	_check_stack_validity()
 	if !enemy_stack.is_empty():
 		enemy_stack.sort_custom(sort_closest)
 		object_pos = enemy_stack[0].position
@@ -69,3 +71,7 @@ func _eat(food):
 func _clear_stack():
 	enemy_stack.clear()
 
+func _check_stack_validity():
+	for i in enemy_stack:
+		if !main_scene.get_children().has(i):
+			enemy_stack.erase(i)
