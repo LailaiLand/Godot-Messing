@@ -15,13 +15,22 @@ var stage = null
 var character
 var biter = null
 var maps = []
-var map_index = 1
+var map_index = 0
+var is_paused
 
 func _ready():
 	maps.push_back(castle_scene)
 	maps.push_back(cross_scene)
 	character = $Player.get_child(0)
+	$PauseMenu.ready_hook()
+	get_tree().paused = true
+	is_paused = true
+	print("on ready pause status: ", get_tree().paused)
 	new_game()
+
+func _process(_delta):
+	if Input.is_action_just_pressed("pause"):
+		_open_pause()
 
 func game_over():
 	var mob_group = get_tree().get_nodes_in_group("crawler")
@@ -36,6 +45,7 @@ func new_game():
 	character.is_dance = false
 	if stage != null:
 		stage.queue_free()
+	delete_biter()
 	stage = maps[map_index].instantiate()
 	$MapNode.add_child(stage)
 	$MobTimer.start()
@@ -109,6 +119,40 @@ func _check_biter_stack(crawler):
 
 func _on_castle_victory():
 	character.is_dance = true
+	delete_biter()
+	game_over()
+
+func delete_biter():
 	if biter != null:
 		biter.queue_free()
+
+
+func _on_pause_menu_select_close():
+	if is_paused:
+		$PauseMenu.visible = false
+		print("pause status when closing before setting: ", get_tree().paused)
+		get_tree().paused = false
+		is_paused = false
+		print("pause status when closing after setting: ", get_tree().paused)
+
+func _on_pause_menu_select_new_game(index):
+
+	$PauseMenu.visible = false
+	map_index = index
+	get_tree().paused = false
 	game_over()
+	new_game()
+
+func _open_pause():
+#	print("button pressed pause status before setting:", get_tree().paused)
+#	get_tree().paused = !get_tree().paused
+#	print("button pressed pause status after setting:", get_tree().paused)
+#	print("pause button pressed")
+#	print("tree is paused status:", get_tree().paused)
+	if !is_paused:
+		print("inside 'paused false'")
+		get_tree().paused = true
+		$PauseMenu.visible = true
+		is_paused = true
+	else:
+		_on_pause_menu_select_close()

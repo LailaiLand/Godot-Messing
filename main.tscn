@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://df7ovuqmk2fiq"]
+[gd_scene load_steps=13 format=3 uid="uid://df7ovuqmk2fiq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6c3av"]
 [ext_resource type="PackedScene" uid="uid://cq0dstrdi4d45" path="res://crawler.tscn" id="2_e7gkf"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cqid4o8cgcpdv" path="res://poop.tscn" id="7_afqsu"]
 [ext_resource type="PackedScene" uid="uid://cfayq4thiirsh" path="res://biter.tscn" id="8_h4qhv"]
 [ext_resource type="PackedScene" uid="uid://8iegrqugd4ns" path="res://cross.tscn" id="10_6ow3h"]
+[ext_resource type="PackedScene" uid="uid://b3av0bgtmynuh" path="res://pause_menu.tscn" id="12_667vg"]
 
 [node name="Main" type="Node"]
 process_mode = 1
@@ -30,7 +31,10 @@ cross_scene = ExtResource("10_6ow3h")
 [node name="Player" parent="." instance=ExtResource("5_l4v8a")]
 
 [node name="MobTimer" type="Timer" parent="."]
-wait_time = 1.571
+
+[node name="PauseMenu" parent="." instance=ExtResource("12_667vg")]
 
 [connection signal="player_dead" from="Player" to="." method="_on_player_player_dead"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="select_close" from="PauseMenu" to="." method="_on_pause_menu_select_close"]
+[connection signal="select_new_game" from="PauseMenu" to="." method="_on_pause_menu_select_new_game"]

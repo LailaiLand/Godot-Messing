@@ -18,6 +18,7 @@ Button/font_sizes/font_size = 30
 font_size = 30
 
 [node name="PauseMenu" type="CanvasLayer"]
+process_mode = 2
 script = ExtResource("1_ek06q")
 
 [node name="MessageLabel" type="Label" parent="."]
@@ -108,7 +109,11 @@ position = Vector2(480, 480)
 [node name="CloseMarker" type="Marker2D" parent="."]
 position = Vector2(1056, 32)
 
+[connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="mouse_entered" from="StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="button_up" from="CloseButton" to="." method="_on_close_button_button_up"]
 [connection signal="mouse_entered" from="CloseButton" to="." method="_on_close_button_mouse_entered"]
+[connection signal="button_up" from="PreviousButton" to="." method="_on_previous_button_button_up"]
 [connection signal="mouse_entered" from="PreviousButton" to="." method="_on_previous_button_mouse_entered"]
+[connection signal="button_up" from="NextButton" to="." method="_on_next_button_button_up"]
 [connection signal="mouse_entered" from="NextButton" to="." method="_on_next_button_mouse_entered"]
