@@ -20,10 +20,10 @@ func _ready():
 	connect("delete_crawler", main_scene._on_child_delete_crawler)
 
 func _process(_delta):
-	if flip:
-		$AnimatedSprite2D.flip_h = true
-	else:
-		$AnimatedSprite2D.flip_h = false
+#	if flip:
+#		$AnimatedSprite2D.flip_h = true
+#	else:
+#		$AnimatedSprite2D.flip_h = false
 	
 	if $AnimatedSprite2D.animation == "bite":
 		if $AnimatedSprite2D.get_frame() == 10:
@@ -42,10 +42,10 @@ func _physics_process(_delta):
 	target_pos = (object_pos - position).normalized()
 	
 	velocity = target_pos * speed
-	if velocity.x > 1:
-		flip = false
-	elif velocity.x < 1:
-		flip = true
+	if velocity.x < 0.5:
+		$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.flip_h = false
 	
 	if !eating:
 		move_and_slide()

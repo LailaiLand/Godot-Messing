@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://df7ovuqmk2fiq"]
+[gd_scene load_steps=15 format=3 uid="uid://df7ovuqmk2fiq"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6c3av"]
 [ext_resource type="PackedScene" uid="uid://cq0dstrdi4d45" path="res://crawler.tscn" id="2_e7gkf"]
@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cqid4o8cgcpdv" path="res://poop.tscn" id="7_afqsu"]
 [ext_resource type="PackedScene" uid="uid://cfayq4thiirsh" path="res://biter.tscn" id="8_h4qhv"]
 [ext_resource type="PackedScene" uid="uid://8iegrqugd4ns" path="res://cross.tscn" id="10_6ow3h"]
+[ext_resource type="PackedScene" uid="uid://cmmludumjepyd" path="res://demo.tscn" id="11_25cgf"]
 [ext_resource type="PackedScene" uid="uid://b3av0bgtmynuh" path="res://pause_menu.tscn" id="12_667vg"]
+[ext_resource type="PackedScene" uid="uid://c6k72w2myxcyh" path="res://spiral.tscn" id="12_jjygo"]
 
 [node name="Main" type="Node"]
 process_mode = 1
@@ -25,6 +27,8 @@ poop_scene = ExtResource("7_afqsu")
 biter_scene = ExtResource("8_h4qhv")
 castle_scene = ExtResource("7_2mohx")
 cross_scene = ExtResource("10_6ow3h")
+demo_scene = ExtResource("11_25cgf")
+spiral_scene = ExtResource("12_jjygo")
 
 [node name="MapNode" type="Node2D" parent="."]
 

@@ -10,6 +10,8 @@ extends Node
 
 @export var castle_scene: PackedScene
 @export var cross_scene: PackedScene
+@export var demo_scene: PackedScene
+@export var spiral_scene: PackedScene
 
 var stage = null
 var character
@@ -17,10 +19,13 @@ var biter = null
 var maps = []
 var map_index = 0
 var is_paused
+var poop_pile = []
 
 func _ready():
 	maps.push_back(castle_scene)
 	maps.push_back(cross_scene)
+	maps.push_back(spiral_scene)
+	maps.push_back(demo_scene)
 	character = $Player.get_child(0)
 	$PauseMenu.ready_hook()
 	get_tree().paused = true
@@ -37,6 +42,8 @@ func game_over():
 	for mob in mob_group:
 		_check_biter_stack(mob)
 		remove_child(mob)
+	for poop in poop_pile:
+		remove_child(poop)
 	$MobTimer.stop()
 
 func new_game():
@@ -93,6 +100,7 @@ func _on_Biter_spawn_poop(args):
 	var pos = args
 	var poop = poop_scene.instantiate()
 	poop.position = pos
+	poop_pile.push_back(poop)
 	call_deferred("add_child", poop)
 
 func _on_Biteify_spawn_biter(args):
@@ -130,13 +138,10 @@ func delete_biter():
 func _on_pause_menu_select_close():
 	if is_paused:
 		$PauseMenu.visible = false
-		print("pause status when closing before setting: ", get_tree().paused)
 		get_tree().paused = false
 		is_paused = false
-		print("pause status when closing after setting: ", get_tree().paused)
 
 func _on_pause_menu_select_new_game(index):
-
 	$PauseMenu.visible = false
 	map_index = index
 	get_tree().paused = false
@@ -144,13 +149,7 @@ func _on_pause_menu_select_new_game(index):
 	new_game()
 
 func _open_pause():
-#	print("button pressed pause status before setting:", get_tree().paused)
-#	get_tree().paused = !get_tree().paused
-#	print("button pressed pause status after setting:", get_tree().paused)
-#	print("pause button pressed")
-#	print("tree is paused status:", get_tree().paused)
 	if !is_paused:
-		print("inside 'paused false'")
 		get_tree().paused = true
 		$PauseMenu.visible = true
 		is_paused = true

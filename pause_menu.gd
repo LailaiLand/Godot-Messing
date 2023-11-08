@@ -64,13 +64,13 @@ func _select_move():
 
 func _level_select(direction):
 	if direction == "previous":
-		map_index = map_index + 1
-		if map_index > map_range:
-			map_index = 0
-	if direction == "next":
 		map_index = map_index - 1
 		if map_index < 0:
 			map_index = map_range
+	if direction == "next":
+		map_index = map_index + 1
+		if map_index > map_range:
+			map_index = 0
 
 func _confirm_pressed(position):
 	if position == "start":
