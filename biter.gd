@@ -42,9 +42,9 @@ func _physics_process(_delta):
 	target_pos = (object_pos - position).normalized()
 	
 	velocity = target_pos * speed
-	if velocity.x > 0.2:
+	if velocity.x > 1:
 		flip = false
-	elif velocity.x < 0.2:
+	elif velocity.x < 1:
 		flip = true
 	
 	if !eating:

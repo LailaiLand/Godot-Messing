@@ -122,7 +122,8 @@ shape = SubResource("CapsuleShape2D_32wm2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_omc80")
-animation = &"bite"
+animation = &"stand"
+frame_progress = 0.159288
 
 [node name="CaseZone" type="Area2D" parent="."]
 collision_layer = 5

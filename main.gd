@@ -9,15 +9,18 @@ extends Node
 @export var biter_scene: PackedScene
 
 @export var castle_scene: PackedScene
+@export var cross_scene: PackedScene
 
-var stage
+var stage = null
 var character
 var biter = null
 var maps = []
-var map_index = 0
+var map_index = 1
 
 func _ready():
 	maps.push_back(castle_scene)
+	maps.push_back(cross_scene)
+	character = $Player.get_child(0)
 	new_game()
 
 func game_over():
@@ -28,19 +31,18 @@ func game_over():
 	$MobTimer.stop()
 
 func new_game():
-	character = $Player.get_child(0)
 	character.position = Vector2(100, 100)
 	character.health = 3
+	character.is_dance = false
+	if stage != null:
+		stage.queue_free()
 	stage = maps[map_index].instantiate()
 	$MapNode.add_child(stage)
 	$MobTimer.start()
 
-
 func _on_player_player_dead():
 	game_over()
 	new_game()
-
-
 
 func _on_mob_timer_timeout():
 	var crawler = crawler_scene.instantiate()
@@ -104,3 +106,9 @@ func _check_biter_stack(crawler):
 		return false
 	biter_stack.erase(crawler)
 	return true
+
+func _on_castle_victory():
+	character.is_dance = true
+	if biter != null:
+		biter.queue_free()
+	game_over()

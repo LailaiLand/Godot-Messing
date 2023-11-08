@@ -8,6 +8,8 @@ var map_index
 var map_length
 var main_scene
 
+signal select_pressed
+
 func _ready():
 	shooter_head = get_node("ShooterHead")
 	#main_scene = get_parent()
@@ -24,7 +26,6 @@ func _floating_animation():
 func _handle_selection():
 	_select_position()
 	_select_controls()
-	
 
 func _select_position():
 	if selection[select_index] == "start":
@@ -39,6 +40,7 @@ func _select_position():
 func _select_controls():
 	if Input.is_action_just_pressed("downBiter") or Input.is_action_just_pressed("rightBiter"):
 		select_index = select_index +1
+		emit_signal("select_pressed")
 		if select_index > select_range:
 			select_index = 0
 	if Input.is_action_just_pressed("upBiter") or Input.is_action_just_pressed("leftBiter"):
