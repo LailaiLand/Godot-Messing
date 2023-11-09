@@ -130,6 +130,7 @@ collision_layer = 5
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CaseZone"]
+visible = false
 shape = SubResource("CircleShape2D_1o71t")
 
 [connection signal="body_entered" from="CaseZone" to="." method="_on_case_zone_body_entered"]

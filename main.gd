@@ -10,8 +10,8 @@ extends Node
 
 @export var castle_scene: PackedScene
 @export var cross_scene: PackedScene
-@export var demo_scene: PackedScene
 @export var spiral_scene: PackedScene
+@export var demo_scene: PackedScene
 
 var stage = null
 var character
